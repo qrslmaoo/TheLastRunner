@@ -31,7 +31,7 @@ const story = [
         section: "act1"
     },
     {
-        text: "The neon signs flicker outside your window""half of them broken, the other half selling lies.",
+        text: "The neon signs flicker outside your window—half of them broken, the other half selling lies.",
         section: "act1",
         ambientLight: "neon-blue"
     },
@@ -85,7 +85,7 @@ const story = [
         section: "act1"
     },
     {
-        text: "Break that rule, and you're dead. Or worse""you become a product.",
+        text: "Break that rule, and you're dead. Or worse—you become a product.",
         section: "act1",
         ambientLight: "danger-red"
     },
@@ -102,7 +102,7 @@ const story = [
         section: "act1"
     },
     {
-        text: "You saw one last week. She was begging outside the transit station. Not for money""for deletion.",
+        text: "You saw one last week. She was begging outside the transit station. Not for money—for deletion.",
         section: "act1"
     },
     {
@@ -456,7 +456,7 @@ const story = [
         section: "act2"
     },
     {
-        text: "As punishment""or insurance""they used you as a test subject. Wiped your memories of the deal. Of her.",
+        text: "As punishment—or insurance—they used you as a test subject. Wiped your memories of the deal. Of her.",
         section: "act2"
     },
     {
@@ -560,7 +560,7 @@ const story = [
         section: "act2"
     },
     {
-        text: "Please don't do this. Please. We can figure something else out""",
+        text: "Please don't do this. Please. We can figure something else out—",
         section: "act2"
     },
     {
@@ -588,7 +588,7 @@ const story = [
         section: "act2"
     },
     {
-        text: "The woman again. Different memory. Her hands""flesh hands""reaching toward you.",
+        text: "The woman again. Different memory. Her hands—flesh hands—reaching toward you.",
         section: "act2",
         glitch: true
     },
@@ -605,7 +605,7 @@ const story = [
         section: "act2"
     },
     {
-        text: "They took my hands. They took everything""",
+        text: "They took my hands. They took everything—",
         section: "act2"
     },
     {
@@ -629,7 +629,7 @@ const story = [
         section: "act2"
     },
     {
-        text: "If something goes wrong""",
+        text: "If something goes wrong—",
         section: "act2"
     },
     {
@@ -724,11 +724,11 @@ const story = [
         section: "act3"
     },
     {
-        text: "You sold me! You knew they wanted me, not the data""",
+        text: "You sold me! You knew they wanted me, not the data—",
         section: "act3"
     },
     {
-        text: "I didn't"" I thought""",
+        text: "I didn't—I thought—",
         section: "act3"
     },
     {
@@ -741,7 +741,7 @@ const story = [
         ambientLight: "danger-red"
     },
     {
-        text: "Please. I'm a mechanic. I need my hands. Please don't""",
+        text: "Please. I'm a mechanic. I need my hands. Please don't—",
         section: "act3"
     },
     {
@@ -787,7 +787,7 @@ const story = [
         section: "act3"
     },
     {
-        text: "You're her. I"" Your voice breaks. I did that to you.",
+        text: "You're her. I—Your voice breaks. I did that to you.",
         section: "act3"
     },
     {
@@ -915,7 +915,7 @@ const story = [
             ambientLight: "danger-red"
         },
         {
-            text: "You can feel it immediately""code ripping through your mind like broken glass.",
+            text: "You can feel it immediately—code ripping through your mind like broken glass.",
             section: "uploadEnd"
         },
         {
@@ -969,15 +969,15 @@ const story = [
             ambientLight: "death-fade"
         },
         {
-            text: """",
+            text: —"",
             section: "uploadEnd"
         },
         {
-            text: """",
+            text: —"",
             section: "uploadEnd"
         },
         {
-            text: """",
+            text: —"",
             section: "uploadEnd"
         },
         {
@@ -1074,7 +1074,7 @@ const story = [
             section: "abortEnd"
         },
         {
-            text: "I""",
+            text: "I—",
             section: "abortEnd"
         },
         {
@@ -1111,7 +1111,7 @@ const story = [
             section: "abortEnd"
         },
         {
-            text: "Why are you""",
+            text: "Why are you—",
             section: "abortEnd"
         },
         {
@@ -1136,15 +1136,15 @@ const story = [
             section: "abortEnd"
         },
         {
-            text: """",
+            text: —"",
             section: "abortEnd"
         },
         {
-            text: """",
+            text: —"",
             section: "abortEnd"
         },
         {
-            text: """",
+            text: —"",
             section: "abortEnd"
         },
         {
