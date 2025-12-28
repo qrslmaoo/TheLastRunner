@@ -379,27 +379,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
-
-    <script>
-        // Debug logger
-        console.log('Page loaded');
-        console.log('Checking for elements...');
-
-        window.addEventListener('DOMContentLoaded', function() {
-            console.log('DOM Content Loaded');
-
-            const startBtn = document.getElementById('start-btn');
-            console.log('Start button found:', !!startBtn);
-
-            if (startBtn) {
-                startBtn.addEventListener('click', function() {
-                    console.log('BEGIN BUTTON CLICKED!');
-                });
-            } else {
-                console.error('Start button NOT FOUND!');
-            }
-        });
-    </script>
+    <script src="script.js" defer></script>
 </body>
 </html>
