@@ -31,7 +31,7 @@ const story = [
         section: "act1"
     },
     {
-        text: "The neon signs flicker outside your window—half of them broken, the other half selling lies.",
+        text: "The neon signs flicker outside your windowâ€”half of them broken, the other half selling lies.",
         section: "act1",
         ambientLight: "neon-blue"
     },
@@ -85,7 +85,7 @@ const story = [
         section: "act1"
     },
     {
-        text: "Break that rule, and you're dead. Or worse—you become a product.",
+        text: "Break that rule, and you're dead. Or worseâ€”you become a product.",
         section: "act1",
         ambientLight: "danger-red"
     },
@@ -102,7 +102,7 @@ const story = [
         section: "act1"
     },
     {
-        text: "You saw one last week. She was begging outside the transit station. Not for money—for deletion.",
+        text: "You saw one last week. She was begging outside the transit station. Not for moneyâ€”for deletion.",
         section: "act1"
     },
     {
@@ -456,7 +456,7 @@ const story = [
         section: "act2"
     },
     {
-        text: "As punishment—or insurance—they used you as a test subject. Wiped your memories of the deal. Of her.",
+        text: "As punishmentâ€”or insuranceâ€”they used you as a test subject. Wiped your memories of the deal. Of her.",
         section: "act2"
     },
     {
@@ -560,7 +560,7 @@ const story = [
         section: "act2"
     },
     {
-        text: "Please don't do this. Please. We can figure something else out—",
+        text: "Please don't do this. Please. We can figure something else outâ€”",
         section: "act2"
     },
     {
@@ -588,7 +588,7 @@ const story = [
         section: "act2"
     },
     {
-        text: "The woman again. Different memory. Her hands—flesh hands—reaching toward you.",
+        text: "The woman again. Different memory. Her handsâ€”flesh handsâ€”reaching toward you.",
         section: "act2",
         glitch: true
     },
@@ -605,7 +605,7 @@ const story = [
         section: "act2"
     },
     {
-        text: "They took my hands. They took everything—",
+        text: "They took my hands. They took everythingâ€”",
         section: "act2"
     },
     {
@@ -629,7 +629,7 @@ const story = [
         section: "act2"
     },
     {
-        text: "If something goes wrong—",
+        text: "If something goes wrongâ€”",
         section: "act2"
     },
     {
@@ -724,11 +724,11 @@ const story = [
         section: "act3"
     },
     {
-        text: "You sold me! You knew they wanted me, not the data—",
+        text: "You sold me! You knew they wanted me, not the dataâ€”",
         section: "act3"
     },
     {
-        text: "I didn't— I thought—",
+        text: "I didn'tâ€” I thoughtâ€”",
         section: "act3"
     },
     {
@@ -741,7 +741,7 @@ const story = [
         ambientLight: "danger-red"
     },
     {
-        text: "Please. I'm a mechanic. I need my hands. Please don't—",
+        text: "Please. I'm a mechanic. I need my hands. Please don'tâ€”",
         section: "act3"
     },
     {
@@ -787,7 +787,7 @@ const story = [
         section: "act3"
     },
     {
-        text: "You're her. I— Your voice breaks. I did that to you.",
+        text: "You're her. Iâ€” Your voice breaks. I did that to you.",
         section: "act3"
     },
     {
@@ -887,25 +887,6 @@ const story = [
     },
 
     // THE CHOICE
-        // Pre-final choice: stay or leave
-    {
-        text: "The truth sits between you. Heavy. Real. You could stay and face what she has planned. Or walk away and end it yourself.",
-        section: "preChoice",
-        isChoice: true,
-        prompt: "What do you do?",
-        choices: [
-            { text: "Stay. Face what Riven has planned.", path: "continueToChoice" },
-            { text: "Leave. You can't do this. End it yourself.", path: "harvestEnd" }
-        ]
-    },
-    {
-        text: "You stay. Whatever comes next, you'll face it.",
-        section: "stay"
-    },
-    {
-        text: "She places the upload device in your hand.",
-        section: "finalChoice"
-    },
     {
         text: "The upload device sits in your hand. You don't deserve mercy. You never did.",
         section: "choice",
@@ -919,79 +900,7 @@ const story = [
 ];
 
 // Different endings
-
-// ENDING #7: THE HARVEST
-const harvestEnd = [
-    { text: "You pull the cables out. Stand up.", section: "harvestEnd" },
-    { text: "Mechanic: Where are you going?", section: "harvestEnd" },
-    { text: "Ash: I can't do this. Any of this.", section: "harvestEnd" },
-    { text: "Mechanic: You're running. Again.", section: "harvestEnd" },
-    { text: "Ash: Yeah.", section: "harvestEnd" },
-    { text: "You leave. She doesn't stop you. Why would she?", section: "harvestEnd", ambientLight: "neon-blue" },
-    { text: "You walk the streets. Hours. The guilt is crushing. Physical weight.", section: "harvestEnd" },
-    { text: "Her hands. The saw. Her screaming. It loops. Won't stop.", section: "harvestEnd", glitch: true },
-    { text: "You can't live with this. Can't die with it. Can't escape it.", section: "harvestEnd" },
-    { text: "Then you remember. Memory brokers. The ones who buy from desperate runners.", section: "harvestEnd", ambientLight: "neon-red" },
-    { text: "You know the address. You've sold to them before.", section: "harvestEnd" },
-    { text: "The office is in the corporate district. Clean. Legal. Sanitized evil.", section: "harvestEnd", ambientLight: "neon-cyan" },
-    { text: "Broker: You're selling? Or buying?", section: "harvestEnd" },
-    { text: "Ash: Selling. Everything. Full extraction.", section: "harvestEnd" },
-    { text: "Broker: Full extraction? That's permanent. You understand that?", section: "harvestEnd" },
-    { text: "Ash: I understand.", section: "harvestEnd" },
-    { text: "Broker: You'll be alive. Functional. But empty. Corporate property.", section: "harvestEnd" },
-    { text: "Ash: How much?", section: "harvestEnd" },
-    { text: "The broker checks your neural signature. Your memory quality. Your history.", section: "harvestEnd" },
-    { text: "Broker: You're a runner. Good quality memories. Recent trauma. High value.", section: "harvestEnd" },
-    { text: "Broker: Fifty thousand credits. We'll wire it to any account you specify.", section: "harvestEnd" },
-    { text: "You send her information. Riven's signature. Everything goes to her.", section: "harvestEnd" },
-    { text: "Broker: Interesting choice. Sign here.", section: "harvestEnd" },
-    { text: "You sign. Digital contract. Legally binding. No going back.", section: "harvestEnd", ambientLight: "danger-red" },
-    { text: "They take you to a medical room. Clean. White. Like the room where they took her hands.", section: "harvestEnd" },
-    { text: "You lie down. They strap you in. Not for safety. To prevent resistance.", section: "harvestEnd" },
-    { text: "Technician: This will hurt. We don't use anesthetic. Memory quality degrades.", section: "harvestEnd" },
-    { text: "Ash: I know. I've sold to you before. Other people's memories.", section: "harvestEnd" },
-    { text: "Technician: Full circle then.", section: "harvestEnd" },
-    { text: "They connect the extraction array. Multiple cables. Deep neural access.", section: "harvestEnd", glitch: true },
-    { text: "The extraction starts. It feels like drowning from the inside.", section: "harvestEnd" },
-    { text: "Your memories pulling out. One by one. Raw. Bleeding.", section: "harvestEnd" },
-    { text: "Childhood. Gone. First job. Gone. Her face. Her hands. Her screaming.", section: "harvestEnd" },
-    { text: "Everything. Gone.", section: "harvestEnd" },
-    { text: "You scream. Everyone does. The technician doesn't stop. They never do.", section: "harvestEnd", ambientLight: "memory-flash" },
-    { text: "This is what you did to others. For years. And now it's happening to you.", section: "harvestEnd" },
-    { text: "Perfect symmetry. Perfect justice.", section: "harvestEnd" },
-    { text: "The extraction takes four hours. You're awake for all of it.", section: "harvestEnd" },
-    { text: "When it's done, you're still breathing. Heart still beating.", section: "harvestEnd", ambientLight: "neon-blue" },
-    { text: "But you're not there anymore. Just meat. Just storage.", section: "harvestEnd" },
-    { text: "They tattoo a barcode on your neck. Corporate property. Asset #447821.", section: "harvestEnd" },
-    { text: "They assign you to a data center. You'll store corporate files now.", section: "harvestEnd" },
-    { text: "Just like the woman you saw begging outside the transit station. The one you walked past.", section: "harvestEnd" },
-    { text: "You're her now. You're all of them.", section: "harvestEnd", ambientLight: "cold-purple" },
-    { text: "—", section: "harvestEnd" },
-    { text: "—", section: "harvestEnd" },
-    { text: "—", section: "harvestEnd" },
-    { text: "Six months later.", section: "harvestEnd", ambientLight: "neon-red" },
-    { text: "Riven receives a payment notification. Fifty thousand credits. Anonymous source.", section: "harvestEnd" },
-    { text: "She traces it. Corporate memory broker. Recent sale. Full extraction.", section: "harvestEnd" },
-    { text: "Neural signature matches: Ash.", section: "harvestEnd" },
-    { text: "She finds you three weeks later. Data center sublevel. Row 47.", section: "harvestEnd" },
-    { text: "You're sitting. Cables in your head. Empty eyes. Drooling slightly.", section: "harvestEnd" },
-    { text: "She stands in front of you. You don't recognize her. Don't recognize anything.", section: "harvestEnd" },
-    { text: "Riven: You took the coward's way out. Even in this.", section: "harvestEnd" },
-    { text: "You don't respond. Can't respond. There's nothing left to respond with.", section: "harvestEnd" },
-    { text: "Riven: The money... you sent it to me. Why?", section: "harvestEnd" },
-    { text: "Silence. Just the hum of servers. Data flowing through your empty mind.", section: "harvestEnd" },
-    { text: "Riven: It wasn't enough. It'll never be enough.", section: "harvestEnd", ambientLight: "cold-purple" },
-    { text: "She leaves. Doesn't look back.", section: "harvestEnd" },
-    { text: "You stay. You'll stay forever. Corporate property can't self-terminate.", section: "harvestEnd" },
-    { text: "The city claimed another runner. Turned them into product. Like it always does.", section: "harvestEnd" },
-    { text: "The cycle continues. It always does.", section: "harvestEnd", ambientLight: "death-fade" },
-    { text: "ENDING 7: THE HARVEST", section: "end" }
-];
-
-
 const endings = {
-    harvestEnd: harvestEnd,
-
     uploadEnd: [
         {
             text: "You plug in the device.",
@@ -1016,7 +925,7 @@ const endings = {
             ambientLight: "danger-red"
         },
         {
-            text: "You can feel it immediately—code ripping through your mind like broken glass.",
+            text: "You can feel it immediatelyâ€”code ripping through your mind like broken glass.",
             section: "uploadEnd"
         },
         {
@@ -1070,15 +979,15 @@ const endings = {
             ambientLight: "death-fade"
         },
         {
-            text: "—",
+            text: "â€”",
             section: "uploadEnd"
         },
         {
-            text: "—",
+            text: "â€”",
             section: "uploadEnd"
         },
         {
-            text: "—",
+            text: "â€”",
             section: "uploadEnd"
         },
         {
@@ -1175,7 +1084,7 @@ const endings = {
             section: "abortEnd"
         },
         {
-            text: "I—",
+            text: "Iâ€”",
             section: "abortEnd"
         },
         {
@@ -1212,7 +1121,7 @@ const endings = {
             section: "abortEnd"
         },
         {
-            text: "Why are you—",
+            text: "Why are youâ€”",
             section: "abortEnd"
         },
         {
@@ -1237,15 +1146,15 @@ const endings = {
             section: "abortEnd"
         },
         {
-            text: "—",
+            text: "â€”",
             section: "abortEnd"
         },
         {
-            text: "—",
+            text: "â€”",
             section: "abortEnd"
         },
         {
-            text: "—",
+            text: "â€”",
             section: "abortEnd"
         },
         {
@@ -1548,21 +1457,6 @@ function makeChoice(path) {
     if (choiceMade) return;
     choiceMade = true;
 
-    console.log('Player chose:', path);
-
-    // Handle continue path (not an ending, just continues story)
-    if (path === 'continueToChoice') {
-        choiceMade = false;
-        currentIndex++;
-        glitchOverlay.style.opacity = '0.5';
-        setTimeout(() => {
-            glitchOverlay.style.opacity = '0';
-            choiceContainer.classList.add('hidden');
-            displayStory();
-        }, 800);
-        return;
-    }
-
     // Apply glitch effect
     glitchOverlay.style.opacity = '0.5';
     setTimeout(() => {
@@ -1607,7 +1501,7 @@ function restart() {
     introScreen.style.display = 'flex';
     introScreen.classList.remove('fade-out');
 
-    continueBtn.innerHTML = '<span>CONTINUE</span><span class="arrow">▶</span>';
+    continueBtn.innerHTML = '<span>CONTINUE</span><span class="arrow">â–¶</span>';
     continueBtn.onclick = nextStory;
 }
 
