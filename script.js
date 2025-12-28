@@ -197,15 +197,17 @@ const story = [
         section: "act1"
     },
     {
-        text: "Port's glitching, you say. Need it fixed.",
+        text: "Ash: Port's glitching. Need it fixed.",
         section: "act1"
     },
     {
-        text: "She still doesn't look up. Payment upfront. No questions, no small talk, no names.",
+        text: "She still doesn't look up.
+
+Mechanic: Payment upfront. No questions, no small talk, no names.",
         section: "act1"
     },
     {
-        text: "Fine.",
+        text: "Ash: Fine.",
         section: "act1"
     },
     {
@@ -241,7 +243,9 @@ const story = [
         section: "act1"
     },
     {
-        text: "Corroded cable. You're lucky you're not dead. She disconnects it without gentleness.",
+        text: "Mechanic: Corroded cable. You're lucky you're not dead.
+
+She disconnects it without gentleness.",
         section: "act1"
     },
     {
@@ -326,19 +330,19 @@ const story = [
         section: "act1"
     },
     {
-        text: "I don't have money, you say.",
+        text: "Ash: I don't have money.",
         section: "act1"
     },
     {
-        text: "Then leave.",
+        text: "Mechanic: Then leave.",
         section: "act1"
     },
     {
-        text: "I'll die if you don't fix it.",
+        text: "Ash: I'll die if you don't fix it.",
         section: "act1"
     },
     {
-        text: "Not my problem.",
+        text: "Mechanic: Not my problem.",
         section: "act1"
     },
     {
@@ -350,16 +354,16 @@ const story = [
         section: "act1"
     },
     {
-        text: "Sit down.",
+        text: "Mechanic: Sit down.",
         section: "act1",
         ambientLight: "neon-cyan"
     },
     {
-        text: "Why?",
+        text: "Ash: Why?",
         section: "act1"
     },
     {
-        text: "Because I need you alive. For now.",
+        text: "Mechanic: Because I need you alive. For now.",
         section: "act1"
     },
     {
@@ -375,15 +379,15 @@ const story = [
         section: "act1"
     },
     {
-        text: "Deliver this. Address is on the chip. You get half the payment.",
+        text: "Mechanic: Deliver this. Address is on the chip. You get half the payment.",
         section: "act1"
     },
     {
-        text: "What's on it?",
+        text: "Ash: What's on it?",
         section: "act1"
     },
     {
-        text: "Not your concern. Deliver it or starve. Your choice.",
+        text: "Mechanic: Not your concern. Deliver it or starve. Your choice.",
         section: "act1"
     },
     {
@@ -497,7 +501,9 @@ const story = [
         section: "act2"
     },
     {
-        text: "She responds immediately. Price?",
+        text: "She responds immediately.
+
+Mechanic: Price?",
         section: "act2"
     },
     {
@@ -505,7 +511,9 @@ const story = [
         section: "act2"
     },
     {
-        text: "Long silence. Then: Come to the shop. Midnight.",
+        text: "Long silence.
+
+Mechanic: Come to the shop. Midnight.",
         section: "act2"
     },
     {
@@ -518,19 +526,19 @@ const story = [
         section: "act2"
     },
     {
-        text: "How much? you ask.",
+        text: "Ash: How much?",
         section: "act2"
     },
     {
-        text: "Nothing. I'll do it for free.",
+        text: "Mechanic: Nothing. I'll do it for free.",
         section: "act2"
     },
     {
-        text: "Why?",
+        text: "Ash: Why?",
         section: "act2"
     },
     {
-        text: "Because I need to see what's in your head.",
+        text: "Mechanic: Because I need to see what's in your head.",
         section: "act2"
     },
     {
@@ -538,11 +546,11 @@ const story = [
         section: "act2"
     },
     {
-        text: "If your heart stops, I can restart it. If your brain hemorrhages, you're dead. Understand?",
+        text: "Mechanic: If your heart stops, I can restart it. If your brain hemorrhages, you're dead. Understand?",
         section: "act2"
     },
     {
-        text: "Understood.",
+        text: "Ash: Understood.",
         section: "act2"
     },
     {
@@ -572,15 +580,15 @@ const story = [
         section: "act2"
     },
     {
-        text: "You saw something.",
+        text: "Mechanic: You saw something.",
         section: "act2"
     },
     {
-        text: "A woman. Don't know who.",
+        text: "Ash: A woman. Don't know who.",
         section: "act2"
     },
     {
-        text: "We'll go again.",
+        text: "Mechanic: We'll go again.",
         section: "act2"
     },
     {
@@ -617,7 +625,7 @@ const story = [
         section: "act2"
     },
     {
-        text: "One more extraction, she says. Final one.",
+        text: "Mechanic: One more extraction. Final one.",
         section: "act2"
     },
     {
@@ -633,7 +641,7 @@ const story = [
         section: "act2"
     },
     {
-        text: "Then I die. I know.",
+        text: "Ash: Then I die. I know.",
         section: "act2"
     },
     {
@@ -679,7 +687,7 @@ const story = [
         section: "act3"
     },
     {
-        text: "I need you to do something for me, you hear yourself say.",
+        text: "Ash (past): I need you to do something for me.",
         section: "act3"
     },
     {
@@ -687,7 +695,7 @@ const story = [
         section: "act3"
     },
     {
-        text: "There's a job. Big payout. I need you to store some data for me. Temporarily.",
+        text: "Ash (past): There's a job. Big payout. I need you to store some data for me. Temporarily.",
         section: "act3"
     },
     {
@@ -695,19 +703,19 @@ const story = [
         section: "act3"
     },
     {
-        text: "The woman is angry. You said temporary. It's been three weeks. Get this out of my head.",
+        text: "Young Mechanic: You said temporary. It's been three weeks. Get this out of my head.",
         section: "act3"
     },
     {
-        text: "Just a few more days. The buyer's almost ready.",
+        text: "Ash (past): Just a few more days. The buyer's almost ready.",
         section: "act3"
     },
     {
-        text: "I don't care about your buyer. Get it out. Now.",
+        text: "Young Mechanic: I don't care about your buyer. Get it out. Now.",
         section: "act3"
     },
     {
-        text: "I can't. Not yet. Just trust me.",
+        text: "Ash (past): I can't. Not yet. Just trust me.",
         section: "act3"
     },
     {
@@ -795,57 +803,59 @@ const story = [
         section: "act3"
     },
     {
-        text: "You've known this whole time. Since the first day.",
+        text: "Ash: You've known this whole time. Since the first day.",
         section: "act3"
     },
     {
-        text: "Yes. The corporation changed your face, but I recognized your neural signature. Your port. Your walking pattern.",
+        text: "Riven: Yes. The corporation changed your face, but I recognized your neural signature. Your port. Your walking pattern.",
         section: "act3"
     },
     {
-        text: "I've been tracking you for two years. Waiting for them to find you. Waiting for this.",
+        text: "Riven: I've been tracking you for two years. Waiting for them to find you. Waiting for this.",
         section: "act3"
     },
     {
-        text: "Why didn't you just kill me?",
+        text: "Ash: Why didn't you just kill me?",
         section: "act3"
     },
     {
-        text: "Because death is too easy. You don't get to escape.",
+        text: "Riven: Because death is too easy. You don't get to escape.",
         section: "act3",
         ambientLight: "cold-purple"
     },
     {
-        text: "She pulls out a data chip. This is what's really in your head. Not corporate secrets. A virus.",
+        text: "She pulls out a data chip.
+
+Riven: This is what's really in your head. Not corporate secrets. A virus.",
         section: "act3"
     },
     {
-        text: "I've been building it for two years. Every session, every job, every time you came back.",
+        text: "Riven: I've been building it for two years. Every session, every job, every time you came back.",
         section: "act3"
     },
     {
-        text: "When you upload it to the client, it'll destroy their entire memory trafficking network.",
+        text: "Riven: When you upload it to the client, it'll destroy their entire memory trafficking network.",
         section: "act3"
     },
     {
-        text: "Thousands of people freed. The whole system burned down.",
+        text: "Riven: Thousands of people freed. The whole system burned down.",
         section: "act3"
     },
     {
-        text: "What happens to me?",
+        text: "Ash: What happens to me?",
         section: "act3"
     },
     {
-        text: "The upload will erase you. Your mind. Your personality. Everything.",
+        text: "Riven: The upload will erase you. Your mind. Your personality. Everything.",
         section: "act3",
         glitch: true
     },
     {
-        text: "You'll still be breathing. But you won't be you anymore.",
+        text: "Riven: You'll still be breathing. But you won't be you anymore.",
         section: "act3"
     },
     {
-        text: "You'll be nothing. Just like you made me nothing.",
+        text: "Riven: You'll be nothing. Just like you made me nothing.",
         section: "act3"
     },
     {
@@ -853,7 +863,7 @@ const story = [
         section: "act3"
     },
     {
-        text: "I never cared about you, did I? In the memory. I just used you.",
+        text: "Ash: I never cared about you, did I? In the memory. I just used you.",
         section: "act3"
     },
     {
@@ -861,7 +871,7 @@ const story = [
         section: "act3"
     },
     {
-        text: "And I'd do it again. I haven't changed.",
+        text: "Ash: And I'd do it again. I haven't changed.",
         section: "act3"
     },
     {
@@ -869,11 +879,11 @@ const story = [
         section: "act3"
     },
     {
-        text: "So why give me a choice?",
+        text: "Ash: So why give me a choice?",
         section: "act3"
     },
     {
-        text: "Because either way, you suffer. Complete the upload, you're erased. Abort it, you live knowing what you are.",
+        text: "Riven: Because either way, you suffer. Complete the upload, you're erased. Abort it, you live knowing what you are.",
         section: "act3"
     },
     {
@@ -911,11 +921,11 @@ const endings = {
             section: "uploadEnd"
         },
         {
-            text: "You're really going to do it.",
+            text: "Riven: You're really going to do it.",
             section: "uploadEnd"
         },
         {
-            text: "Yeah. It's what I deserve.",
+            text: "Ash: Yeah. It's what I deserve.",
             section: "uploadEnd"
         },
         {
@@ -1028,11 +1038,13 @@ const endings = {
             section: "uploadEnd"
         },
         {
-            text: "A customer comes in. Sees you. What's that?",
+            text: "A customer comes in. Sees you.
+
+Customer: What's that?",
             section: "uploadEnd"
         },
         {
-            text: "Nothing important, Riven says.",
+            text: "Riven: Nothing important.",
             section: "uploadEnd"
         },
         {
@@ -1080,7 +1092,7 @@ const endings = {
             section: "abortEnd"
         },
         {
-            text: "Of course. Of course you'd choose yourself. You always do.",
+            text: "Riven: Of course. Of course you'd choose yourself. You always do.",
             section: "abortEnd"
         },
         {
@@ -1088,7 +1100,7 @@ const endings = {
             section: "abortEnd"
         },
         {
-            text: "Get out.",
+            text: "Riven: Get out.",
             section: "abortEnd"
         },
         {
@@ -1096,11 +1108,11 @@ const endings = {
             section: "abortEnd"
         },
         {
-            text: "You ruined me, and you'd do it again. You're exactly what I thought you were.",
+            text: "Riven: You ruined me, and you'd do it again. You're exactly what I thought you were.",
             section: "abortEnd"
         },
         {
-            text: "GET OUT.",
+            text: "Riven: GET OUT.",
             section: "abortEnd",
             ambientLight: "danger-red"
         },
@@ -1117,7 +1129,7 @@ const endings = {
             section: "abortEnd"
         },
         {
-            text: "Go. Back door.",
+            text: "Riven: Go. Back door.",
             section: "abortEnd"
         },
         {
@@ -1125,7 +1137,7 @@ const endings = {
             section: "abortEnd"
         },
         {
-            text: "I'm not helping you. I'm making sure you live long enough to suffer.",
+            text: "Riven: I'm not helping you. I'm making sure you live long enough to suffer.",
             section: "abortEnd"
         },
         {
