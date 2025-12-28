@@ -201,9 +201,9 @@ const story = [
         section: "act1"
     },
     {
-        text: "She still doesn't look up.
+        text: "She still doesn't look up."
 
-Mechanic: Payment upfront. No questions, no small talk, no names.",
+		text: "Mechanic: Payment upfront. No questions, no small talk, no names.",
         section: "act1"
     },
     {
