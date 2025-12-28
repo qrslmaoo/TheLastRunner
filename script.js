@@ -31,7 +31,7 @@ const story = [
         section: "act1"
     },
     {
-        text: "The neon signs flicker outside your window, half of them broken, the other half selling lies.",
+        text: "The neon signs flicker outside your window"”half of them broken, the other half selling lies.",
         section: "act1",
         ambientLight: "neon-blue"
     },
@@ -85,7 +85,7 @@ const story = [
         section: "act1"
     },
     {
-        text: "Break that rule, and you're dead. Or worse, you become a product.",
+        text: "Break that rule, and you're dead. Or worse"”you become a product.",
         section: "act1",
         ambientLight: "danger-red"
     },
@@ -201,9 +201,7 @@ const story = [
         section: "act1"
     },
     {
-        text: "She still doesn't look up."
-
-		text: "Mechanic: Payment upfront. No questions, no small talk, no names.",
+        text: "She still doesn't look up.\n\n\n\nMechanic: Payment upfront. No questions, no small talk, no names.",
         section: "act1"
     },
     {
@@ -243,9 +241,7 @@ const story = [
         section: "act1"
     },
     {
-        text: "Mechanic: Corroded cable. You're lucky you're not dead.
-
-She disconnects it without gentleness.",
+        text: "Mechanic: Corroded cable. You're lucky you're not dead.\n\n\n\nShe disconnects it without gentleness.",
         section: "act1"
     },
     {
@@ -501,9 +497,7 @@ She disconnects it without gentleness.",
         section: "act2"
     },
     {
-        text: "She responds immediately.
-
-Mechanic: Price?",
+        text: "She responds immediately.\n\n\n\nMechanic: Price?",
         section: "act2"
     },
     {
@@ -511,9 +505,7 @@ Mechanic: Price?",
         section: "act2"
     },
     {
-        text: "Long silence.
-
-Mechanic: Come to the shop. Midnight.",
+        text: "Long silence.\n\n\n\nMechanic: Come to the shop. Midnight.",
         section: "act2"
     },
     {
@@ -824,9 +816,7 @@ Mechanic: Come to the shop. Midnight.",
         ambientLight: "cold-purple"
     },
     {
-        text: "She pulls out a data chip.
-
-Riven: This is what's really in your head. Not corporate secrets. A virus.",
+        text: "She pulls out a data chip.\n\n\n\nRiven: This is what's really in your head. Not corporate secrets. A virus.",
         section: "act3"
     },
     {
@@ -903,17 +893,7 @@ Riven: This is what's really in your head. Not corporate secrets. A virus.",
         isChoice: true,
         prompt: "What do you do?",
         choices: [
-            { text: "Complete the upload. Erase yourself. It's what you deserve.", path: "uploadEnd" },
-            { text: "Abort the upload. Keep existing. Keep being the monster you are.", path: "abortEnd" }
-        ]
-    }
-];
-
-// Different endings
-const endings = {
-    uploadEnd: [
-        {
-            text: "You plug in the device.",
+            { text: "Abort the upload. Keep existing. Keep being the monster you are.", path: "abortEnd" }\n\n        ]\n\n    }\n\n];\n\n\n\n// Different endings\n\nconst endings = {\n\n    uploadEnd: [\n\n        {\n\n            text: "You plug in the device.",
             section: "uploadEnd"
         },
         {
@@ -1038,9 +1018,7 @@ const endings = {
             section: "uploadEnd"
         },
         {
-            text: "A customer comes in. Sees you.
-
-Customer: What's that?",
+            text: "A customer comes in. Sees you.\n\n\n\nCustomer: What's that?",
             section: "uploadEnd"
         },
         {
