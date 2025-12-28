@@ -1,1509 +1,1737 @@
-// Story data structure - Plot holes patched
+// V3 - BRANCHING NARRATIVE with Multiple Paths and Endings
+// 5 Major Choices → 3 Distinct Paths → 6 Unique Endings
+
 const story = [
-    // ACT 1 - THE DYING CITY
+    // ACT 1 - TRIMMED & ENHANCED
     {
-        text: "The city doesn't sleep. It just pretends to, between the sirens.",
+        text: "The city doesn't sleep. It just pretends to.",
         section: "act1",
         ambientLight: "neon-red"
     },
     {
-        text: "You are Ash. Memory runner. Digital thief.",
+        text: "You are Ash. Memory runner. You steal memories and sell them.",
         section: "act1"
     },
     {
-        text: "You steal what people want to forget and sell it to those who can't remember.",
+        text: "It's not clean work. Nothing in this city is.",
         section: "act1"
     },
     {
-        text: "The irony is that you'd pay anything to forget too. But memories are currency. And you're broke in every way that matters.",
+        text: "Your neural port is glitching. Cheap cables. You need a mechanic.",
         section: "act1"
     },
     {
-        text: "It's not clean work. But clean work doesn't exist. Not here. Not anymore.",
+        text: "The industrial quarter. Where buildings lean against each other and people jump from roofs.",
         section: "act1"
     },
     {
-        text: "You don't talk to people. Can't afford to. Every connection is a liability. Every name you know is a target.",
+        text: "They installed nets. Not to save people. To catch bodies before they damage the pavement.",
         section: "act1"
     },
     {
-        text: "You work alone. Sleep alone. Exist alone.",
-        section: "act1"
-    },
-    {
-        text: "The neon signs flicker outside your window—half of them broken, the other half selling lies.",
+        text: "The shop is between a pawn broker and a corpse disposal unit. Red light above the door.",
         section: "act1",
+        ambientLight: "neon-red"
+    },
+    {
+        text: "Inside: circuit boards, synthetic organs, half-assembled limbs on hooks.",
+        section: "act1"
+    },
+    {
+        text: "A woman at the workbench. She doesn't look up.",
+        section: "act1",
+        ambientLight: "neon-cyan"
+    },
+    {
+        text: "Ash: Port's glitching. Need it fixed.",
+        section: "act1"
+    },
+    {
+        text: "Mechanic: Payment upfront. No questions, no names.",
+        section: "act1"
+    },
+    {
+        text: "You transfer half your credits. Everything you have.",
+        section: "act1"
+    },
+    {
+        text: "She gestures to a chair. You sit. Tilt your head, exposing the port.",
+        section: "act1"
+    },
+    {
+        text: "Her hands are cold. Cybernetic. Military grade. Scars where metal meets flesh.",
+        section: "act1"
+    },
+    {
+        text: "Mechanic: Corroded cable. You're lucky you're not dead.",
+        section: "act1"
+    },
+    {
+        text: "She disconnects the old cable. Pain spikes through your skull. White hot. You taste copper.",
+        section: "act1"
+    },
+    {
+        text: "She slots in a new cable. Clean signal. The relief is immediate.",
+        section: "act1"
+    },
+    {
+        text: "You pay the rest. Now you're broke. She's already back at work.",
+        section: "act1"
+    },
+    {
+        text: "You leave. Three blocks away, you stop on a bridge.",
+        section: "act1",
+        ambientLight: "cold-purple"
+    },
+    {
+        text: "Sixty feet down onto concrete. Quick. Clean.",
+        section: "act1"
+    },
+    {
+        text: "Scratches on the railing. Messages. Someone carved FINALLY into the metal.",
+        section: "act1"
+    },
+    {
+        text: "You're broke. The cable will last a few months. Then you'll need another repair you can't afford.",
+        section: "act1"
+    },
+    {
+        text: "The cycle never ends. Until you become product.",
+        section: "act1"
+    },
+
+    // CHOICE #1: THE BRIDGE
+    {
+        text: "You could end it now. No more cycles. No more repairs. Just nothing.",
+        section: "choice1",
+        isChoice: true,
+        prompt: "What do you do?",
+        choices: [
+            { text: "Jump. End it.", path: "jumpPath" },
+            { text: "Keep walking. Not tonight.", path: "continuePath" }
+        ]
+    }
+];
+
+// BRANCH: JUMP ENDING (Early exit)
+const jumpPath = [
+    {
+        text: "You climb onto the railing. Your hands shake.",
+        section: "jumpEnd"
+    },
+    {
+        text: "For a second, you think about changing your mind.",
+        section: "jumpEnd"
+    },
+    {
+        text: "You don't.",
+        section: "jumpEnd",
+        glitch: true
+    },
+    {
+        text: "The fall takes three seconds. Feels like longer.",
+        section: "jumpEnd"
+    },
+    {
+        text: "You don't feel the impact. Your port fries first. Neural overload from the fear.",
+        section: "jumpEnd",
+        ambientLight: "danger-red"
+    },
+    {
+        text: "The nets catch your body. They always do.",
+        section: "jumpEnd"
+    },
+    {
+        text: "Cleanup crew arrives within twenty minutes. They don't check for ID.",
+        section: "jumpEnd"
+    },
+    {
+        text: "They never do. You're just another body. Another number.",
+        section: "jumpEnd"
+    },
+    {
+        text: "The city claims another one. It always does.",
+        section: "jumpEnd",
+        ambientLight: "death-fade"
+    },
+    {
+        text: "ENDING 1: THE DROP",
+        section: "end"
+    }
+];
+
+// BRANCH: CONTINUE PATH
+const continuePath = [
+    {
+        text: "You keep walking. Not tonight. Maybe tomorrow.",
+        section: "act1continue",
         ambientLight: "neon-blue"
     },
     {
-        text: "PARADISE AWAITS. NEW YOU IN 30 DAYS. FORGET YOUR PAIN.",
-        section: "act1"
-    },
-    {
-        text: "The smog is thick tonight. It's always thick. Some days you can barely see the building across the street.",
-        section: "act1"
-    },
-    {
-        text: "Some days you wonder if there's anything out there at all. If the city just ends and becomes nothing.",
-        section: "act1"
-    },
-    {
-        text: "If you walked far enough, would you just disappear into gray?",
-        section: "act1"
-    },
-    {
-        text: "Would anyone notice?",
-        section: "act1"
-    },
-    {
-        text: "Your apartment is small. One room. A mattress on the floor. Neural cables hanging from the ceiling like nooses.",
-        section: "act1"
-    },
-    {
-        text: "You've thought about it. Everyone has. The cables can handle more than data transfer.",
-        section: "act1"
-    },
-    {
-        text: "But you're a coward. Too scared to die, too tired to live.",
-        section: "act1",
-        ambientLight: "cold-purple"
-    },
-    {
-        text: "The walls are stained with water damage that looks like maps of countries that don't exist anymore.",
-        section: "act1"
-    },
-    {
-        text: "Sometimes you trace them with your fingers. Wonder if they were better. If anywhere was ever better.",
-        section: "act1"
-    },
-    {
-        text: "You probably wouldn't have fit in there either.",
-        section: "act1"
-    },
-    {
-        text: "You have one rule: never sell memories of people who still matter to someone alive.",
-        section: "act1"
-    },
-    {
-        text: "Break that rule, and you're dead. Or worse—you become a product.",
-        section: "act1",
-        ambientLight: "danger-red"
-    },
-    {
-        text: "You've seen it happen. Runners who got greedy. Who sold the wrong memory to the wrong person.",
-        section: "act1"
-    },
-    {
-        text: "They're still alive, technically. Walking around with empty eyes and corporate barcodes tattooed on their necks.",
-        section: "act1"
-    },
-    {
-        text: "Human storage drives. Nothing left inside but someone else's data.",
-        section: "act1"
-    },
-    {
-        text: "You saw one last week. She was begging outside the transit station. Not for money—for deletion.",
-        section: "act1"
-    },
-    {
-        text: "She kept screaming that she could feel the data inside her head. That it was eating her. That she wanted to die but couldn't.",
-        section: "act1"
-    },
-    {
-        text: "Corporate property can't self-terminate. They have failsafes. She'll beg forever.",
-        section: "act1"
-    },
-    {
-        text: "You walked past her. Everyone did. What else can you do?",
-        section: "act1"
-    },
-    {
-        text: "You tell yourself you're different. That you won't end up like her.",
-        section: "act1"
-    },
-    {
-        text: "You're lying. You always end up lying.",
-        section: "act1"
-    },
-    {
-        text: "Every runner ends up the same. Product or corpse. Just a matter of time.",
-        section: "act1",
-        ambientLight: "cold-purple"
-    },
-    {
-        text: "Your neural port is glitching. Cheap cables, cheap maintenance. You can't afford better.",
-        section: "act1"
-    },
-    {
-        text: "If it fails completely, you're done. Can't run memories without hardware.",
-        section: "act1"
-    },
-    {
-        text: "You need a mechanic. Someone in the industrial quarter who doesn't ask questions.",
-        section: "act1"
-    },
-    {
-        text: "Where the buildings lean into each other like they're too tired to stand alone.",
-        section: "act1"
-    },
-    {
-        text: "Where people jump from the roofs so often they installed nets. Not to save them. To catch the bodies before they damage the pavement.",
-        section: "act1"
-    },
-    {
-        text: "You take the transit. The train car smells like piss and copper. Blood, probably. There's always blood.",
-        section: "act1"
-    },
-    {
-        text: "A man sleeps in the corner. Or maybe he's dead. You don't check. Not your problem.",
-        section: "act1"
-    },
-    {
-        text: "A girl with chrome eyes stares at you. They don't blink. Can't blink.",
-        section: "act1"
-    },
-    {
-        text: "You wonder what she traded for them. What she gave up. If it was worth it.",
-        section: "act1"
-    },
-    {
-        text: "You stare back. She looks away first. Everyone does. Eye contact means trouble.",
-        section: "act1"
-    },
-    {
-        text: "The shop is tucked between a pawn broker and a corpse disposal unit. No sign. Just a red light above a metal door.",
-        section: "act1",
-        ambientLight: "neon-red"
-    },
-    {
-        text: "You knock twice. The door opens automatically. No one's there.",
-        section: "act1"
-    },
-    {
-        text: "Inside, the shop is cluttered with parts. Circuit boards. Synthetic organs. Half-assembled limbs hanging from hooks.",
-        section: "act1"
-    },
-    {
-        text: "It smells like solder and something rotting. Like every other shop trying to keep broken people functional.",
-        section: "act1"
-    },
-    {
-        text: "There's a woman at the workbench, hunched over something small and sparking.",
-        section: "act1",
-        ambientLight: "neon-cyan"
-    },
-    {
-        text: "She doesn't look up. Doesn't acknowledge you.",
-        section: "act1"
-    },
-    {
-        text: "Port's glitching, you say. Need it fixed.",
-        section: "act1"
-    },
-    {
-        text: "She still doesn't look up. Payment upfront. No questions, no small talk, no names.",
-        section: "act1"
-    },
-    {
-        text: "Fine.",
-        section: "act1"
-    },
-    {
-        text: "You transfer half your credits. Everything you have. She checks the transfer, then gestures to a chair.",
-        section: "act1"
-    },
-    {
-        text: "The chair is cracked leather. Stained with old blood. You sit.",
-        section: "act1"
-    },
-    {
-        text: "You tilt your head, exposing the port at the base of your skull.",
-        section: "act1"
-    },
-    {
-        text: "The most vulnerable part of you. The part that keeps you useful. The part that keeps you alive.",
-        section: "act1"
-    },
-    {
-        text: "She could kill you right now. Slice your spinal cord. Harvest your implants.",
-        section: "act1"
-    },
-    {
-        text: "Part of you almost hopes she does.",
-        section: "act1"
-    },
-    {
-        text: "Her hands are cold when they touch your neck. Cybernetic. Military grade. You notice scars where the metal meets flesh.",
-        section: "act1"
-    },
-    {
-        text: "Corporate work. The expensive kind. The kind that comes with a price.",
-        section: "act1"
-    },
-    {
-        text: "Corroded cable. You're lucky you're not dead. She disconnects it without gentleness.",
-        section: "act1"
-    },
-    {
-        text: "The disconnect sends a spike of pain through your skull. You don't make a sound. Can't show weakness.",
-        section: "act1"
-    },
-    {
-        text: "She slots in a new cable. Clean signal. No static.",
-        section: "act1"
-    },
-    {
-        text: "You stand. Transfer the rest of your payment. Now you're completely broke.",
-        section: "act1"
-    },
-    {
-        text: "She's already back at her workbench. Doesn't say goodbye. Doesn't care.",
-        section: "act1"
-    },
-    {
-        text: "You leave. The door locks behind you with a heavy thunk.",
-        section: "act1"
-    },
-    {
-        text: "You walk three blocks. Stop on a bridge overlooking the industrial sector.",
-        section: "act1",
-        ambientLight: "cold-purple"
-    },
-    {
-        text: "The drop is sixty feet. Onto concrete. Quick. Clean.",
-        section: "act1"
-    },
-    {
-        text: "You've stood here before. Lots of people have. You can tell by the scratches on the railing. Messages. Goodbyes.",
-        section: "act1"
-    },
-    {
-        text: "Someone carved FINALLY into the metal. You run your fingers over it.",
-        section: "act1"
-    },
-    {
-        text: "You're broke now. No credits. No food. The cable will last a few months, maybe.",
-        section: "act1"
-    },
-    {
-        text: "Then you'll need another repair. Another payment you can't afford.",
-        section: "act1"
-    },
-    {
-        text: "The cycle never ends. Work, break, repair, work. Until the day you can't pay anymore.",
-        section: "act1"
-    },
-    {
-        text: "Then you become product.",
-        section: "act1"
-    },
-    {
-        text: "You grip the railing. It would be so easy.",
-        section: "act1"
-    },
-    {
-        text: "But you keep walking. Not tonight. Maybe tomorrow.",
-        section: "act1"
-    },
-    {
         text: "You always say tomorrow.",
-        section: "act1"
+        section: "act1continue"
     },
     {
-        text: "Two weeks later, your port glitches again. Different problem. You need the same mechanic.",
-        section: "act1"
+        text: "Two weeks later, your port glitches again. You have no money.",
+        section: "act1continue"
     },
     {
-        text: "You have no money. You know what that means.",
-        section: "act1"
+        text: "But you go anyway. The alternative is dying slowly.",
+        section: "act1continue"
     },
     {
-        text: "But you go anyway. Because the alternative is dying slowly, port degrading until it fries your brain.",
-        section: "act1"
+        text: "Ash: I don't have money.",
+        section: "act1continue"
     },
     {
-        text: "The shop door opens. She's there. Doesn't look up.",
-        section: "act1"
+        text: "Mechanic: Then leave.",
+        section: "act1continue"
     },
     {
-        text: "I don't have money, you say.",
-        section: "act1"
+        text: "Ash: I'll die if you don't fix it.",
+        section: "act1continue"
     },
     {
-        text: "Then leave.",
-        section: "act1"
+        text: "Mechanic: Not my problem.",
+        section: "act1continue"
     },
     {
-        text: "I'll die if you don't fix it.",
-        section: "act1"
+        text: "You stand there. She finally looks at you. Gray eyes. Empty.",
+        section: "act1continue"
     },
     {
-        text: "Not my problem.",
-        section: "act1"
-    },
-    {
-        text: "You stand there. Waiting for something. You don't know what.",
-        section: "act1"
-    },
-    {
-        text: "She finally looks at you. Her eyes are gray. Empty. Dead.",
-        section: "act1"
-    },
-    {
-        text: "Sit down.",
-        section: "act1",
+        text: "Mechanic: Sit down.",
+        section: "act1continue",
         ambientLight: "neon-cyan"
     },
     {
-        text: "Why?",
-        section: "act1"
+        text: "Ash: Why?",
+        section: "act1continue"
     },
     {
-        text: "Because I need you alive. For now.",
-        section: "act1"
-    },
-    {
-        text: "You don't understand. But you sit. You don't have a choice.",
-        section: "act1"
+        text: "Mechanic: Because I need you alive. For now.",
+        section: "act1continue"
     },
     {
         text: "She fixes your port. Doesn't charge you. Doesn't explain.",
-        section: "act1"
+        section: "act1continue"
     },
     {
-        text: "When she's done, she hands you a data chip. Encrypted. Corporate grade.",
-        section: "act1"
+        text: "She hands you a data chip. Corporate encryption.",
+        section: "act1continue"
     },
     {
-        text: "Deliver this. Address is on the chip. You get half the payment.",
-        section: "act1"
+        text: "Mechanic: Deliver this. You get half the payment.",
+        section: "act1continue"
     },
     {
-        text: "What's on it?",
-        section: "act1"
+        text: "Ash: What's on it?",
+        section: "act1continue"
     },
     {
-        text: "Not your concern. Deliver it or starve. Your choice.",
-        section: "act1"
+        text: "Mechanic: Not your concern. Deliver it or starve.",
+        section: "act1continue"
+    },
+
+    // CHOICE #2: TAKE THE JOB?
+    {
+        text: "It's illegal work. You know it is. But you're broke.",
+        section: "choice2",
+        isChoice: true,
+        prompt: "What do you do?",
+        choices: [
+            { text: "Take the job. You need to survive.", path: "acceptJobPath" },
+            { text: "Refuse. You still have standards.", path: "refuseJobPath" }
+        ]
+    }
+];
+
+// BRANCH: REFUSE JOB (loops back with consequences)
+const refuseJobPath = [
+    {
+        text: "Ash: I don't do illegal work.",
+        section: "refuseJob"
     },
     {
-        text: "You take the chip. You always do. Survival over morals. That's the rule.",
-        section: "act1"
+        text: "She stares at you. No expression.",
+        section: "refuseJob"
     },
     {
-        text: "You start running jobs for her. Small things. Data transfers. Hardware pickups. Illegal work.",
-        section: "act1"
+        text: "Mechanic: Then starve.",
+        section: "refuseJob"
+    },
+    {
+        text: "You leave. Try to find legal work. There isn't any.",
+        section: "refuseJob"
+    },
+    {
+        text: "One week later, you're eating from dumpsters. Your port is glitching again.",
+        section: "refuseJob",
+        ambientLight: "cold-purple"
+    },
+    {
+        text: "Two weeks later, you're back at her door.",
+        section: "refuseJob"
+    },
+    {
+        text: "She opens it. Doesn't say anything.",
+        section: "refuseJob",
+        ambientLight: "neon-cyan"
+    },
+    {
+        text: "Ash: I'll take the job.",
+        section: "refuseJob"
+    },
+    {
+        text: "Mechanic: I know. You always do.",
+        section: "refuseJob"
+    },
+    {
+        text: "She hands you the same chip. You take it.",
+        section: "refuseJob"
+    },
+    {
+        text: "Now she knows you're desperate. Knows you'll do anything.",
+        section: "refuseJob"
+    },
+    // Rejoins main path
+    {
+        text: "You start running jobs for her. Data transfers. Hardware pickups. Illegal work.",
+        section: "act1merge"
     },
     {
         text: "She pays enough to keep you alive. Barely.",
-        section: "act1"
+        section: "act1merge"
     },
     {
-        text: "You never talk beyond the transactions. She doesn't want to know you. You don't want to be known.",
-        section: "act1"
+        text: "You never talk beyond transactions. Three months pass.",
+        section: "act1merge"
     },
     {
-        text: "That's better. Safer.",
-        section: "act1"
-    },
-    {
-        text: "Three months pass. You stop going to the bridge as often.",
-        section: "act1"
-    },
-    {
-        text: "Not because things are better. Just because you're too busy staying alive.",
-        section: "act1"
-    },
-    {
-        text: "That's when the real message comes.",
-        section: "act1",
+        text: "Then the real message comes.",
+        section: "act1merge",
         ambientLight: "danger-red"
     },
-
-    // ACT 2 - THE JOB
+    // Jump to ACT 2
     {
-        text: "The message arrives at 3 AM. Anonymous sender. Corporate encryption.",
+        text: "CONTINUE_TO_ACT2",
+        section: "transition"
+    }
+];
+
+// BRANCH: ACCEPT JOB (main path)
+const acceptJobPath = [
+    {
+        text: "You take the chip. Survival over morals.",
+        section: "acceptJob"
+    },
+    {
+        text: "You start running jobs for her. Data transfers. Hardware pickups. Illegal work.",
+        section: "acceptJob"
+    },
+    {
+        text: "She pays enough to keep you alive. Barely.",
+        section: "acceptJob"
+    },
+    {
+        text: "You never talk beyond transactions. Three months pass.",
+        section: "acceptJob"
+    },
+    {
+        text: "Then the real message comes.",
+        section: "acceptJob",
+        ambientLight: "danger-red"
+    },
+    // Jump to ACT 2
+    {
+        text: "CONTINUE_TO_ACT2",
+        section: "transition"
+    }
+];
+
+// ACT 2 - THE JOB
+const act2 = [
+    {
+        text: "3 AM. Anonymous sender. Corporate encryption.",
         section: "act2",
         glitch: true
     },
     {
-        text: "You almost delete it. But the payment amount stops you.",
+        text: "The payment amount stops you from deleting it. Enough money to leave the city.",
         section: "act2"
     },
     {
-        text: "Enough money to leave the city. Enough to disappear. Enough to finally stop.",
-        section: "act2"
-    },
-    {
-        text: "The job: extract a specific memory set from a high-level executive's personal archive.",
-        section: "act2"
-    },
-    {
-        text: "Except there's no executive. The memory set is locked inside your head.",
+        text: "The job: extract a memory set from your own head.",
         section: "act2",
         ambientLight: "neon-cyan"
     },
     {
-        text: "You read the file three times. It doesn't make sense.",
+        text: "Two years ago, you sold someone to the corporation. The deal went bad.",
         section: "act2"
     },
     {
-        text: "Two years ago, you brokered a deal. Sold someone to the corporation. A mechanic.",
+        text: "They used you as a test subject. Wiped your memories. Stored data in your brain.",
         section: "act2"
     },
     {
-        text: "The deal went bad. You tried to back out. They didn't let you.",
+        text: "Gave you a new face. New name. Then lost track of you for two years.",
         section: "act2"
     },
     {
-        text: "As punishment—or insurance—they used you as a test subject. Wiped your memories of the deal. Of her.",
+        text: "Now they found you. Now they want their data back.",
         section: "act2"
     },
     {
-        text: "Stored classified data in your brain as a backup. Then released you with a new identity chip.",
-        section: "act2"
-    },
-    {
-        text: "New face. New name. New life. You don't even remember being someone else.",
-        section: "act2"
-    },
-    {
-        text: "The corporation lost track of you after the wipe. Budget cuts. System failures. Bureaucratic rot.",
-        section: "act2"
-    },
-    {
-        text: "Two years of searching. And now they found you. Now they want their data back.",
-        section: "act2"
-    },
-    {
-        text: "The extraction is dangerous. Could fry your neural system. Could kill you.",
+        text: "The extraction could kill you. 73% fatality rate.",
         section: "act2",
         ambientLight: "danger-red"
     },
     {
-        text: "But if it works, you walk away rich. Free. Done.",
+        text: "But if it works, you're free. You can disappear. Start over.",
         section: "act2"
     },
+
+    // CHOICE #3: ACCEPT EXTRACTION?
     {
-        text: "You stare at the contract. At the payment amount. At the risk assessment: 73% fatality rate.",
-        section: "act2"
+        text: "This is your chance to escape. But the odds are bad. And something feels wrong.",
+        section: "choice3",
+        isChoice: true,
+        prompt: "What do you do?",
+        choices: [
+            { text: "Accept the extraction job. Take the risk.", path: "extractionPath" },
+            { text: "Refuse. This is a trap.", path: "refuseExtractionPath" }
+        ]
+    }
+];
+
+// BRANCH: REFUSE EXTRACTION - PATH A "THE RUNNER"
+const refuseExtractionPath = [
+    {
+        text: "You delete the message. Whatever they want, it's not worth dying for.",
+        section: "pathA",
+        ambientLight: "neon-blue"
     },
     {
-        text: "73% chance you die. 27% chance you're free. Those are better odds than the bridge.",
-        section: "act2"
+        text: "Two days later, corporate security kicks in your door.",
+        section: "pathA",
+        glitch: true
     },
     {
-        text: "You message the mechanic. Tell her you need extraction equipment. Medical grade.",
-        section: "act2"
+        text: "They don't ask questions. They just start tearing apart your apartment.",
+        section: "pathA"
     },
     {
-        text: "She responds immediately. Price?",
-        section: "act2"
+        text: "Looking for you. Looking for the data. Looking for anything.",
+        section: "pathA"
     },
     {
-        text: "You send her the contract details. Everything.",
-        section: "act2"
+        text: "You're not there. You ran the moment you deleted the message.",
+        section: "pathA"
     },
     {
-        text: "Long silence. Then: Come to the shop. Midnight.",
-        section: "act2"
+        text: "You're at the mechanic's shop. Banging on the door.",
+        section: "pathA",
+        ambientLight: "danger-red"
     },
     {
-        text: "When you arrive, the shop is dark except for a single work light.",
-        section: "act2",
+        text: "Ash: They're hunting me. I need help.",
+        section: "pathA"
+    },
+    {
+        text: "She opens the door. Pulls you inside. Locks it.",
+        section: "pathA",
         ambientLight: "neon-cyan"
     },
     {
-        text: "She's set up medical equipment. Neural interface. Stabilizers. Everything you need.",
-        section: "act2"
+        text: "Mechanic: You refused them.",
+        section: "pathA"
     },
     {
-        text: "How much? you ask.",
-        section: "act2"
+        text: "Ash: It was a trap. I know it was.",
+        section: "pathA"
     },
     {
-        text: "Nothing. I'll do it for free.",
-        section: "act2"
+        text: "Mechanic: It was. They would've killed you after the extraction.",
+        section: "pathA"
     },
     {
-        text: "Why?",
-        section: "act2"
+        text: "Ash: How do you know?",
+        section: "pathA"
     },
     {
-        text: "Because I need to see what's in your head.",
-        section: "act2"
+        text: "She doesn't answer. Just starts packing equipment.",
+        section: "pathA"
     },
     {
-        text: "That doesn't make sense. But nothing about this makes sense.",
-        section: "act2"
+        text: "Mechanic: I know someone. Data broker. He helps people disappear.",
+        section: "pathA"
     },
     {
-        text: "If your heart stops, I can restart it. If your brain hemorrhages, you're dead. Understand?",
-        section: "act2"
+        text: "Mechanic: But it costs. Everything you have. Everything I have.",
+        section: "pathA"
     },
     {
-        text: "Understood.",
-        section: "act2"
+        text: "Ash: Why would you help me?",
+        section: "pathA"
     },
     {
-        text: "You sit. She connects the cables. The interface goes live.",
-        section: "act2"
+        text: "She finally looks at you. Those gray eyes. Empty. But something else there now.",
+        section: "pathA"
     },
     {
-        text: "The first extraction pulls fragments. Pieces of a life you don't remember.",
-        section: "act2",
+        text: "Mechanic: Because I need you alive. For now.",
+        section: "pathA"
+    },
+    {
+        text: "The broker operates out of the edge district. Where the city ends and wasteland begins.",
+        section: "pathA",
+        ambientLight: "neon-red"
+    },
+    {
+        text: "The building is half-collapsed. Squatters on every floor. Fires in barrels.",
+        section: "pathA"
+    },
+    {
+        text: "The broker is old. Actual flesh, barely any chrome. That's rare.",
+        section: "pathA"
+    },
+    {
+        text: "Broker: You want out. Corps want you dead. I can help.",
+        section: "pathA"
+    },
+    {
+        text: "Broker: New IDs. Scrambled neural signatures. Transport to the outer settlements.",
+        section: "pathA"
+    },
+    {
+        text: "Broker: But it costs. Both of you. Everything.",
+        section: "pathA"
+    },
+    {
+        text: "Ash: Outer settlements? I thought those were just rumors.",
+        section: "pathA"
+    },
+    {
+        text: "Broker: They're real. Beyond the wasteland. Beyond corp control. Barely.",
+        section: "pathA"
+    },
+    {
+        text: "Broker: Hard living. But it's living. Better than being corp product.",
+        section: "pathA"
+    },
+    {
+        text: "The mechanic transfers her credits. Everything. Years of work. Gone.",
+        section: "pathA"
+    },
+    {
+        text: "You do the same. The broker nods.",
+        section: "pathA"
+    },
+    {
+        text: "Broker: Three days. Come back at midnight. Bring nothing. Be ready to leave forever.",
+        section: "pathA"
+    },
+    {
+        text: "You wait in a safe house. An abandoned factory. Just you and her.",
+        section: "pathA",
+        ambientLight: "cold-purple"
+    },
+    {
+        text: "Ash: Why are you really helping me?",
+        section: "pathA"
+    },
+    {
+        text: "Mechanic: You really don't remember, do you?",
+        section: "pathA"
+    },
+    {
+        text: "Ash: Remember what?",
+        section: "pathA"
+    },
+    {
+        text: "She holds up her metal hands. Shows you the scars.",
+        section: "pathA",
+        glitch: true
+    },
+    {
+        text: "Mechanic: You did this. Two years ago. You sold me to the corps.",
+        section: "pathA"
+    },
+    {
+        text: "The memory hits like a knife. Fragmented. Corrupted. But there.",
+        section: "pathA",
+        ambientLight: "memory-flash"
+    },
+    {
+        text: "A woman. Younger. Flesh hands. Screaming.",
+        section: "pathA"
+    },
+    {
+        text: "You. Watching. Taking payment.",
+        section: "pathA"
+    },
+    {
+        text: "The saw. Her hands. Gone.",
+        section: "pathA"
+    },
+    {
+        text: "Ash: I did that to you.",
+        section: "pathA",
+        ambientLight: "neon-red"
+    },
+    {
+        text: "Mechanic: Yes.",
+        section: "pathA"
+    },
+    {
+        text: "Ash: Then why help me escape?",
+        section: "pathA"
+    },
+    {
+        text: "Mechanic: Because if you die here, you escape. But if you live out there, in the wasteland...",
+        section: "pathA"
+    },
+    {
+        text: "Mechanic: You'll suffer every day. And I'll be there to watch.",
+        section: "pathA"
+    },
+    {
+        text: "Three days pass. Midnight comes. The broker has transport. An old cargo hauler.",
+        section: "pathA",
+        ambientLight: "neon-blue"
+    },
+    {
+        text: "Broker: Last chance. Once you leave, you can't come back. Ever.",
+        section: "pathA"
+    },
+
+    // CHOICE: ESCAPE OR BETRAY
+    {
+        text: "The hauler is running. The wasteland waits. Or you could turn her in. Get your old life back.",
+        section: "pathAchoice",
+        isChoice: true,
+        prompt: "What do you do?",
+        choices: [
+            { text: "Get in the hauler. Escape together.", path: "escapeEnding" },
+            { text: "Alert corporate security. Betray her.", path: "betrayEnding" }
+        ]
+    }
+];
+
+// ENDING #4: THE DISAPPEARED
+const escapeEnding = [
+    {
+        text: "You get in the hauler. She follows.",
+        section: "escapeEnd"
+    },
+    {
+        text: "The city shrinks behind you. Neon fades. Gray concrete becomes gray wasteland.",
+        section: "escapeEnd",
+        ambientLight: "death-fade"
+    },
+    {
+        text: "Three days of driving. Nothing but dust and ruins.",
+        section: "escapeEnd"
+    },
+    {
+        text: "The outer settlements are real. Barely. Prefab structures. Solar panels. Hydroponics.",
+        section: "escapeEnd"
+    },
+    {
+        text: "Five hundred people. Maybe. All running from something.",
+        section: "escapeEnd",
+        ambientLight: "neon-blue"
+    },
+    {
+        text: "You work. Physical labor. Maintaining systems. Fixing things. It's hard.",
+        section: "escapeEnd"
+    },
+    {
+        text: "She works next to you. Her metal hands faster than anyone's flesh.",
+        section: "escapeEnd"
+    },
+    {
+        text: "You don't talk much. There's nothing to say.",
+        section: "escapeEnd"
+    },
+    {
+        text: "Every morning you wake up. Every night you sleep.",
+        section: "escapeEnd"
+    },
+    {
+        text: "No memories to run. No corps to fear. No cycle to escape.",
+        section: "escapeEnd"
+    },
+    {
+        text: "Just existence. Simple. Hard. Real.",
+        section: "escapeEnd"
+    },
+    {
+        text: "She watches you. Always. Waiting for you to slip. To show what you really are.",
+        section: "escapeEnd",
+        ambientLight: "cold-purple"
+    },
+    {
+        text: "You never do. Because you're a coward. Because you'll never change.",
+        section: "escapeEnd"
+    },
+    {
+        text: "And she knows it. And she stays anyway.",
+        section: "escapeEnd"
+    },
+    {
+        text: "Not forgiveness. Just... presence. Watching. Waiting.",
+        section: "escapeEnd"
+    },
+    {
+        text: "You'll both die out here eventually. The wasteland takes everyone.",
+        section: "escapeEnd"
+    },
+    {
+        text: "But at least you'll die free. Whatever that means.",
+        section: "escapeEnd",
+        ambientLight: "death-fade"
+    },
+    {
+        text: "ENDING 4: THE DISAPPEARED",
+        section: "end"
+    }
+];
+
+// ENDING #5: THE SELLOUT
+const betrayEnding = [
+    {
+        text: "You trigger your emergency beacon. Corporate security will be here in minutes.",
+        section: "betrayEnd",
+        glitch: true
+    },
+    {
+        text: "She sees what you're doing. Her face doesn't change.",
+        section: "betrayEnd"
+    },
+    {
+        text: "Mechanic: Of course. Of course you'd do this.",
+        section: "betrayEnd"
+    },
+    {
+        text: "Ash: They'll pay for you. Enough to clear my record. Enough to go back.",
+        section: "betrayEnd"
+    },
+    {
+        text: "Mechanic: Go back to what? Being a parasite?",
+        section: "betrayEnd"
+    },
+    {
+        text: "Ash: It's what I am.",
+        section: "betrayEnd"
+    },
+    {
+        text: "She could run. She doesn't. Just stands there.",
+        section: "betrayEnd"
+    },
+    {
+        text: "Mechanic: I knew you'd do this. I wanted to see if you'd prove me wrong.",
+        section: "betrayEnd"
+    },
+    {
+        text: "Mechanic: You didn't.",
+        section: "betrayEnd"
+    },
+    {
+        text: "Corporate security arrives. Black vans. Armed drones.",
+        section: "betrayEnd",
+        ambientLight: "danger-red"
+    },
+    {
+        text: "They take her. She doesn't resist. Just looks at you.",
+        section: "betrayEnd"
+    },
+    {
+        text: "Empty eyes. Like she's already dead.",
+        section: "betrayEnd"
+    },
+    {
+        text: "They pay you. Clear your record. Give you a new apartment. New port. New life.",
+        section: "betrayEnd",
+        ambientLight: "neon-blue"
+    },
+    {
+        text: "Six months later, you're running memories again. Same cycle. Same work.",
+        section: "betrayEnd"
+    },
+    {
+        text: "Nothing changed. Nothing ever changes.",
+        section: "betrayEnd"
+    },
+    {
+        text: "You check the records. She was processed three weeks after capture.",
+        section: "betrayEnd"
+    },
+    {
+        text: "Full neural wipe. Reprogrammed. Corporate asset now.",
+        section: "betrayEnd"
+    },
+    {
+        text: "She's still alive. Technically. Working in some factory. No memories. No self.",
+        section: "betrayEnd"
+    },
+    {
+        text: "You tell yourself it doesn't matter. She was going to suffer anyway.",
+        section: "betrayEnd"
+    },
+    {
+        text: "You tell yourself you made the right choice.",
+        section: "betrayEnd",
+        ambientLight: "cold-purple"
+    },
+    {
+        text: "You're lying. You always lie.",
+        section: "betrayEnd"
+    },
+    {
+        text: "But you're alive. And that's what matters. Right?",
+        section: "betrayEnd"
+    },
+    {
+        text: "Right?",
+        section: "betrayEnd",
+        ambientLight: "death-fade"
+    },
+    {
+        text: "ENDING 5: THE SELLOUT",
+        section: "end"
+    }
+];
+
+// BRANCH: ACCEPT EXTRACTION - MAIN PATH
+const extractionPath = [
+    {
+        text: "You message the mechanic. Need extraction equipment.",
+        section: "extraction",
+        ambientLight: "neon-cyan"
+    },
+    {
+        text: "She responds immediately.",
+        section: "extraction"
+    },
+    {
+        text: "Mechanic: Come to the shop. Midnight.",
+        section: "extraction"
+    },
+    {
+        text: "When you arrive, she's set up medical equipment. Neural interface. Stabilizers.",
+        section: "extraction"
+    },
+    {
+        text: "Ash: How much?",
+        section: "extraction"
+    },
+    {
+        text: "Mechanic: Nothing. I'll do it for free.",
+        section: "extraction"
+    },
+    {
+        text: "Ash: Why?",
+        section: "extraction"
+    },
+    {
+        text: "Mechanic: Because I need to see what's in your head.",
+        section: "extraction"
+    },
+    {
+        text: "Mechanic: If your heart stops, I can restart it. If your brain hemorrhages, you're dead. Understand?",
+        section: "extraction"
+    },
+    {
+        text: "Ash: Understood.",
+        section: "extraction"
+    },
+    {
+        text: "She connects the cables. Cold metal against your port. The interface goes live.",
+        section: "extraction"
+    },
+    {
+        text: "The first extraction pulls fragments. Pain like white fire in your skull.",
+        section: "extraction",
         glitch: true,
         ambientLight: "memory-flash"
     },
     {
         text: "A woman's face. Young. Terrified. Screaming.",
-        section: "act2"
+        section: "extraction"
     },
     {
-        text: "Please don't do this. Please. We can figure something else out—",
-        section: "act2"
+        text: "Woman's voice: Please don't do this. Please. We can figure something else out—",
+        section: "extraction"
     },
     {
-        text: "The memory cuts. You're back in the chair. Blood running from your nose.",
-        section: "act2"
+        text: "The memory cuts. You're back in the chair. Blood from your nose. Warm. Metallic taste.",
+        section: "extraction"
     },
     {
-        text: "The mechanic wipes your face. Rough. Clinical. No care.",
-        section: "act2"
+        text: "Mechanic: You saw something.",
+        section: "extraction"
+    },
+
+    // CHOICE #4: ASK OR STAY SILENT
+    {
+        text: "The woman's face is burned into your mind. You don't know her. But something about her...",
+        section: "choice4",
+        isChoice: true,
+        prompt: "What do you do?",
+        choices: [
+            { text: "Ask who she was.", path: "askPath" },
+            { text: "Stay silent. Not your problem.", path: "silentPath" }
+        ]
+    }
+];
+
+// BRANCH: ASK ABOUT WOMAN
+const askPath = [
+    {
+        text: "Ash: Who was she? The woman in the memory.",
+        section: "ask"
     },
     {
-        text: "You saw something.",
-        section: "act2"
+        text: "The mechanic pauses. Her metal hands stop moving.",
+        section: "ask"
     },
     {
-        text: "A woman. Don't know who.",
-        section: "act2"
+        text: "Mechanic: You really don't remember.",
+        section: "ask"
     },
     {
-        text: "We'll go again.",
-        section: "act2"
+        text: "Ash: Should I?",
+        section: "ask"
     },
     {
-        text: "The sessions continue. Each one pulls more fragments. More faces. More screaming.",
-        section: "act2"
+        text: "Mechanic: We'll go again.",
+        section: "ask"
     },
     {
-        text: "The woman again. Different memory. Her hands—flesh hands—reaching toward you.",
-        section: "act2",
+        text: "She doesn't answer your question. Just reconnects the cables.",
+        section: "ask"
+    },
+    // Continue to more extractions
+    {
+        text: "CONTINUE_EXTRACTION",
+        section: "transition"
+    }
+];
+
+// BRANCH: STAY SILENT
+const silentPath = [
+    {
+        text: "Ash: A woman. Don't know who.",
+        section: "silent"
+    },
+    {
+        text: "The mechanic stares at you. Something in her eyes. Anger. Disappointment.",
+        section: "silent"
+    },
+    {
+        text: "Mechanic: Of course you don't. We'll go again.",
+        section: "silent"
+    },
+    {
+        text: "Her movements are rougher now. The next connection hurts more.",
+        section: "silent"
+    },
+    // Continue to more extractions
+    {
+        text: "CONTINUE_EXTRACTION",
+        section: "transition"
+    }
+];
+
+// EXTRACTION CONTINUES (merges both paths)
+const extractionContinue = [
+    {
+        text: "More sessions. More fragments. Each one burns deeper.",
+        section: "extractCont"
+    },
+    {
+        text: "The woman crying. Bandages on her arms. Blood soaking through. Bright red. Fresh.",
+        section: "extractCont",
         glitch: true
     },
     {
-        text: "But the memory is corrupted. You can't see her face clearly. Can't hear what she's saying.",
-        section: "act2"
+        text: "Woman's voice: They took my hands. They took everything—",
+        section: "extractCont"
     },
     {
-        text: "Just fragments. Just pain.",
-        section: "act2"
+        text: "Static. Pain. You wake up on the floor. Cold concrete against your face.",
+        section: "extractCont"
     },
     {
-        text: "Another session. The woman crying. Bandages on her arms. Blood soaking through.",
-        section: "act2"
+        text: "The mechanic stands over you. Her metal hands are fists.",
+        section: "extractCont"
     },
     {
-        text: "They took my hands. They took everything—",
-        section: "act2"
-    },
-    {
-        text: "Static. Pain. You wake up on the floor.",
-        section: "act2"
-    },
-    {
-        text: "The mechanic is standing over you. Her face is unreadable. Her metal hands are fists.",
-        section: "act2"
-    },
-    {
-        text: "One more extraction, she says. Final one.",
-        section: "act2"
+        text: "Mechanic: One more extraction. Final one.",
+        section: "extractCont"
     },
     {
         text: "You don't argue. You never do.",
-        section: "act2"
+        section: "extractCont"
     },
     {
         text: "She maxes the stabilizers. This one will hurt more.",
-        section: "act2"
+        section: "extractCont"
     },
     {
-        text: "If something goes wrong—",
-        section: "act2"
+        text: "Mechanic: If something goes wrong—",
+        section: "extractCont"
     },
     {
-        text: "Then I die. I know.",
-        section: "act2"
+        text: "Ash: Then I die. I know.",
+        section: "extractCont"
     },
     {
-        text: "She connects the cables.",
-        section: "act2"
-    },
-    {
-        text: "Everything goes wrong.",
-        section: "act2",
+        text: "She connects the cables. Everything goes wrong.",
+        section: "extractCont",
         ambientLight: "danger-red"
     },
 
     // ACT 3 - THE TRUTH
     {
-        text: "The final extraction tears something open.",
+        text: "The final extraction tears something open. Not fragments. Complete memory.",
         section: "act3",
         glitch: true,
         ambientLight: "memory-flash"
     },
     {
-        text: "Not fragments this time. A full memory. Complete. Undamaged.",
+        text: "You're in this shop. But different. Cleaner. The woman has flesh hands.",
         section: "act3"
     },
     {
-        text: "You're in a shop. This shop.",
+        text: "Your old face in the metal. Before they changed you.",
         section: "act3"
     },
     {
-        text: "But it's different. Cleaner. The woman at the workbench has flesh hands.",
+        text: "Past Ash: I need you to store some data. Temporarily. Big payout.",
         section: "act3"
     },
     {
-        text: "It's her. The woman from the memories.",
+        text: "Woman: What kind of data?",
         section: "act3"
     },
     {
-        text: "She's younger. No scars. No dead eyes.",
+        text: "Past Ash: Corporate stuff. Nothing dangerous. Just needs to be off-grid.",
+        section: "act3"
+    },
+    {
+        text: "Memory jumps. Three weeks later.",
+        section: "act3"
+    },
+    {
+        text: "Woman: You said temporary. Get this out of my head. Now.",
+        section: "act3"
+    },
+    {
+        text: "Past Ash: Just a few more days. Trust me.",
+        section: "act3"
+    },
+    {
+        text: "Memory fragments. Corporate brokers. Credits transferring. Security.",
         section: "act3",
         glitch: true
     },
     {
-        text: "Your old face is reflected in the metal. A face you don't recognize. Before they changed you.",
+        text: "Woman: You sold me! You knew they wanted me!",
         section: "act3"
     },
     {
-        text: "I need you to do something for me, you hear yourself say.",
+        text: "Past Ash: I didn't— I thought—",
         section: "act3"
     },
     {
-        text: "What?",
+        text: "Woman: You're lying! You always lie!",
         section: "act3"
     },
     {
-        text: "There's a job. Big payout. I need you to store some data for me. Temporarily.",
-        section: "act3"
-    },
-    {
-        text: "The memory shifts. Fast-forward. Same shop. Different night.",
-        section: "act3"
-    },
-    {
-        text: "The woman is angry. You said temporary. It's been three weeks. Get this out of my head.",
-        section: "act3"
-    },
-    {
-        text: "Just a few more days. The buyer's almost ready.",
-        section: "act3"
-    },
-    {
-        text: "I don't care about your buyer. Get it out. Now.",
-        section: "act3"
-    },
-    {
-        text: "I can't. Not yet. Just trust me.",
-        section: "act3"
-    },
-    {
-        text: "The memory fragments. Corrupted. Pieces missing.",
-        section: "act3",
-        glitch: true
-    },
-    {
-        text: "You're handing over data. Corporate brokers. Credits transferring.",
-        section: "act3"
-    },
-    {
-        text: "Then shouting. Security. The woman being dragged away.",
-        section: "act3"
-    },
-    {
-        text: "You sold me! You knew they wanted me, not the data—",
-        section: "act3"
-    },
-    {
-        text: "I didn't— I thought—",
-        section: "act3"
-    },
-    {
-        text: "You're lying! You always lie!",
-        section: "act3"
-    },
-    {
-        text: "Metal restraints. Surgical table. Her hands strapped down.",
+        text: "Surgical table. Her hands strapped down. Screaming.",
         section: "act3",
         ambientLight: "danger-red"
     },
     {
-        text: "Please. I'm a mechanic. I need my hands. Please don't—",
+        text: "Woman: Please. I'm a mechanic. I need my hands. Please don't—",
         section: "act3"
     },
     {
-        text: "The saw starts.",
+        text: "The saw starts. High-pitched whine. Smell of burning bone.",
         section: "act3",
         glitch: true
     },
     {
-        text: "Her screaming.",
+        text: "Her screaming. You watching. Counting payment. The sound never stops.",
         section: "act3"
     },
     {
-        text: "You standing there. Watching. Counting your payment.",
+        text: "Corporate security turns on you. The deal was a trap. For both.",
         section: "act3"
     },
     {
-        text: "Then corporate security turning on you. The deal was always a trap. For both of you.",
+        text: "They wipe your memories. Give you a new face. Make you forget.",
         section: "act3"
     },
     {
-        text: "They drag you to another room. Strap you down. Wipe your memories. Give you a new face.",
-        section: "act3"
-    },
-    {
-        text: "Make you forget her. Forget what you did. Forget who you were.",
-        section: "act3"
-    },
-    {
-        text: "Then nothing.",
-        section: "act3"
-    },
-    {
-        text: "You wake up on the floor. Present day. Blood everywhere.",
+        text: "You wake up. Present day. Blood everywhere.",
         section: "act3",
         ambientLight: "neon-red"
     },
     {
-        text: "The mechanic is standing over you. Her metal hands clenched into fists.",
+        text: "The mechanic stands over you. Her metal hands clenched.",
         section: "act3"
     },
     {
-        text: "You remember.",
+        text: "You remember now. All of it.",
         section: "act3"
     },
     {
-        text: "You're her. I— Your voice breaks. I did that to you.",
+        text: "Ash: You're her. I did that to you.",
         section: "act3"
     },
     {
-        text: "Yes.",
+        text: "Mechanic: Yes.",
         section: "act3"
     },
     {
-        text: "You've known this whole time. Since the first day.",
+        text: "Ash: You've known this whole time.",
         section: "act3"
     },
     {
-        text: "Yes. The corporation changed your face, but I recognized your neural signature. Your port. Your walking pattern.",
+        text: "Mechanic: Yes. They changed your face. I recognized your neural signature. Your walking pattern.",
         section: "act3"
     },
     {
-        text: "I've been tracking you for two years. Waiting for them to find you. Waiting for this.",
+        text: "Mechanic: I've been tracking you for two years. Waiting for this.",
         section: "act3"
     },
     {
-        text: "Why didn't you just kill me?",
+        text: "Ash: Why didn't you just kill me?",
         section: "act3"
     },
     {
-        text: "Because death is too easy. You don't get to escape.",
+        text: "Mechanic: Because death is too easy. You don't get to escape.",
         section: "act3",
         ambientLight: "cold-purple"
     },
     {
-        text: "She pulls out a data chip. This is what's really in your head. Not corporate secrets. A virus.",
+        text: "She pulls out a data chip.",
         section: "act3"
     },
     {
-        text: "I've been building it for two years. Every session, every job, every time you came back.",
+        text: "Mechanic: This is what's in your head. Not corporate secrets. A virus.",
         section: "act3"
     },
     {
-        text: "When you upload it to the client, it'll destroy their entire memory trafficking network.",
+        text: "Mechanic: I've been building it for two years. Every session. Every job.",
         section: "act3"
     },
     {
-        text: "Thousands of people freed. The whole system burned down.",
+        text: "Mechanic: When you upload it, it'll destroy their memory trafficking network.",
         section: "act3"
     },
     {
-        text: "What happens to me?",
+        text: "Mechanic: Thousands freed. The whole system burned.",
         section: "act3"
     },
     {
-        text: "The upload will erase you. Your mind. Your personality. Everything.",
+        text: "Ash: What happens to me?",
+        section: "act3"
+    },
+    {
+        text: "Mechanic: The upload will erase you. Your mind. Your personality. Everything.",
         section: "act3",
         glitch: true
     },
     {
-        text: "You'll still be breathing. But you won't be you anymore.",
+        text: "Mechanic: You'll still be breathing. But you won't be you anymore.",
         section: "act3"
     },
     {
-        text: "You'll be nothing. Just like you made me nothing.",
+        text: "Mechanic: You'll be nothing. Just like you made me nothing.",
         section: "act3"
-    },
-    {
-        text: "You stare at her. At those metal hands. At the face you destroyed.",
-        section: "act3"
-    },
-    {
-        text: "I never cared about you, did I? In the memory. I just used you.",
-        section: "act3"
-    },
-    {
-        text: "Yes.",
-        section: "act3"
-    },
-    {
-        text: "And I'd do it again. I haven't changed.",
-        section: "act3"
-    },
-    {
-        text: "I know.",
-        section: "act3"
-    },
-    {
-        text: "So why give me a choice?",
-        section: "act3"
-    },
-    {
-        text: "Because either way, you suffer. Complete the upload, you're erased. Abort it, you live knowing what you are.",
-        section: "act3"
-    },
-    {
-        text: "She places the upload device in your hand.",
-        section: "act3"
-    },
-    {
-        text: "Choose.",
-        section: "act3",
-        ambientLight: "danger-red"
     },
 
-    // THE CHOICE
+    // CHOICE #5: HOW DO YOU RESPOND?
     {
-        text: "The upload device sits in your hand. You don't deserve mercy. You never did.",
-        section: "choice",
+        text: "The truth sits between you. Heavy. Undeniable.",
+        section: "choice5",
         isChoice: true,
-        prompt: "What do you do?",
+        prompt: "How do you respond?",
         choices: [
-            { text: "Complete the upload. Erase yourself. It's what you deserve.", path: "uploadEnd" },
-            { text: "Abort the upload. Keep existing. Keep being the monster you are.", path: "abortEnd" }
+            { text: "I'm sorry. I was desperate. I didn't know.", path: "apologizePath" },
+            { text: "I'd do it again. Survival over everything.", path: "honestPath" },
+            { text: "Attack her. End this.", path: "attackPath" }
         ]
     }
 ];
 
-// Different endings
-const endings = {
-    uploadEnd: [
-        {
-            text: "You plug in the device.",
-            section: "uploadEnd"
-        },
-        {
-            text: "She doesn't move. Doesn't stop you. Just watches.",
-            section: "uploadEnd"
-        },
-        {
-            text: "You're really going to do it.",
-            section: "uploadEnd"
-        },
-        {
-            text: "Yeah. It's what I deserve.",
-            section: "uploadEnd"
-        },
-        {
-            text: "The upload begins.",
-            section: "uploadEnd",
-            glitch: true,
-            ambientLight: "danger-red"
-        },
-        {
-            text: "You can feel it immediately—code ripping through your mind like broken glass.",
-            section: "uploadEnd"
-        },
-        {
-            text: "Every memory burning. Every thought dissolving. Everything that makes you Ash turning to ash.",
-            section: "uploadEnd"
-        },
-        {
-            text: "Your legs give out. You hit the floor hard.",
-            section: "uploadEnd"
-        },
-        {
-            text: "She doesn't catch you. Just stands there. Watching you die.",
-            section: "uploadEnd"
-        },
-        {
-            text: "Through the connection, you can feel the network burning. Thousands of stolen memories being freed.",
-            section: "uploadEnd"
-        },
-        {
-            text: "People waking up. Remembering. Being human again.",
-            section: "uploadEnd"
-        },
-        {
-            text: "It's not redemption. Nothing can redeem what you did.",
-            section: "uploadEnd"
-        },
-        {
-            text: "But it's something. Maybe.",
-            section: "uploadEnd",
-            ambientLight: "neon-cyan"
-        },
-        {
-            text: "You try to speak. To apologize. But the words won't come.",
-            section: "uploadEnd"
-        },
-        {
-            text: "She watches. Her face is stone.",
-            section: "uploadEnd"
-        },
-        {
-            text: "Everything is fading. The pain. The guilt. The memories.",
-            section: "uploadEnd"
-        },
-        {
-            text: "You're disappearing. Piece by piece. Becoming nothing.",
-            section: "uploadEnd"
-        },
-        {
-            text: "It doesn't feel like relief. It just feels like ending.",
-            section: "uploadEnd",
-            ambientLight: "death-fade"
-        },
-        {
-            text: "—",
-            section: "uploadEnd"
-        },
-        {
-            text: "—",
-            section: "uploadEnd"
-        },
-        {
-            text: "—",
-            section: "uploadEnd"
-        },
-        {
-            text: "Three weeks later.",
-            section: "uploadEnd",
-            ambientLight: "neon-blue"
-        },
-        {
-            text: "Riven returns to her shop. The door still opens automatically.",
-            section: "uploadEnd"
-        },
-        {
-            text: "There's someone in the corner. Sitting. Staring at nothing.",
-            section: "uploadEnd"
-        },
-        {
-            text: "It's you. Your body. Your new face. Empty eyes.",
-            section: "uploadEnd"
-        },
-        {
-            text: "She kept you alive. With illegal life support. Black market nutrients. Medical debt she'll never pay off.",
-            section: "uploadEnd"
-        },
-        {
-            text: "Maybe spite. Maybe because killing you would be mercy. Maybe because she needs to see what she made.",
-            section: "uploadEnd"
-        },
-        {
-            text: "You don't recognize her. Don't recognize anything.",
-            section: "uploadEnd"
-        },
-        {
-            text: "Sometimes you make sounds. Not words. Just... sounds.",
-            section: "uploadEnd"
-        },
-        {
-            text: "She feeds you. Keeps you functional. You're a pet. A trophy. A reminder.",
-            section: "uploadEnd"
-        },
-        {
-            text: "A customer comes in. Sees you. What's that?",
-            section: "uploadEnd"
-        },
-        {
-            text: "Nothing important, Riven says.",
-            section: "uploadEnd"
-        },
-        {
-            text: "She goes back to work. Soldering. Building. Fixing.",
-            section: "uploadEnd"
-        },
-        {
-            text: "Her hands don't shake anymore. They stopped the night you erased yourself.",
-            section: "uploadEnd"
-        },
-        {
-            text: "She still doesn't talk to anyone. Still works alone. Still waits to die.",
-            section: "uploadEnd",
-            ambientLight: "cold-purple"
-        },
-        {
-            text: "Revenge didn't fix her. Nothing will.",
-            section: "uploadEnd"
-        },
-        {
-            text: "But at least you're suffering. At least she's not alone in that.",
-            section: "uploadEnd"
-        },
-        {
-            text: "At least there's that.",
-            section: "uploadEnd"
-        },
-        {
-            text: "END",
-            section: "end"
-        }
-    ],
+// BRANCH: APOLOGIZE
+const apologizePath = [
+    {
+        text: "Ash: I'm sorry. I was desperate. I didn't know they'd—",
+        section: "apologize"
+    },
+    {
+        text: "Mechanic: Stop.",
+        section: "apologize"
+    },
+    {
+        text: "Ash: I never meant for—",
+        section: "apologize"
+    },
+    {
+        text: "Mechanic: Stop lying.",
+        section: "apologize",
+        ambientLight: "danger-red"
+    },
+    {
+        text: "Mechanic: You knew. You always knew. You just didn't care.",
+        section: "apologize"
+    },
+    {
+        text: "Mechanic: And even now, you're trying to lie your way out.",
+        section: "apologize"
+    },
+    {
+        text: "She's right. You know she's right.",
+        section: "apologize"
+    },
+    {
+        text: "Mechanic: Apologies don't mean anything here. They never did.",
+        section: "apologize"
+    },
+    // Continue to final choice
+    {
+        text: "CONTINUE_TO_FINAL_CHOICE",
+        section: "transition"
+    }
+];
 
-    abortEnd: [
-        {
-            text: "You abort the upload.",
-            section: "abortEnd"
-        },
-        {
-            text: "The device goes dark. The connection severs. The fire in your head stops.",
-            section: "abortEnd"
-        },
-        {
-            text: "She doesn't look surprised. She knew.",
-            section: "abortEnd"
-        },
-        {
-            text: "Of course. Of course you'd choose yourself. You always do.",
-            section: "abortEnd"
-        },
-        {
-            text: "I—",
-            section: "abortEnd"
-        },
-        {
-            text: "Get out.",
-            section: "abortEnd"
-        },
-        {
-            text: "You can't find words. There are no words.",
-            section: "abortEnd"
-        },
-        {
-            text: "You ruined me, and you'd do it again. You're exactly what I thought you were.",
-            section: "abortEnd"
-        },
-        {
-            text: "GET OUT.",
-            section: "abortEnd",
-            ambientLight: "danger-red"
-        },
-        {
-            text: "You hear them before you see them. Boots. Corporate security.",
-            section: "abortEnd"
-        },
-        {
-            text: "The failed upload triggered an alert. They're here for you. For the data still in your head.",
-            section: "abortEnd"
-        },
-        {
-            text: "She pulls a gun from under the workbench.",
-            section: "abortEnd"
-        },
-        {
-            text: "Go. Back door.",
-            section: "abortEnd"
-        },
-        {
-            text: "Why are you—",
-            section: "abortEnd"
-        },
-        {
-            text: "I'm not helping you. I'm making sure you live long enough to suffer.",
-            section: "abortEnd"
-        },
-        {
-            text: "The door bursts open. You run.",
-            section: "abortEnd"
-        },
-        {
-            text: "Gunfire behind you. Shouting. Breaking glass.",
-            section: "abortEnd",
-            glitch: true
-        },
-        {
-            text: "You keep running. You don't look back.",
-            section: "abortEnd"
-        },
-        {
-            text: "You can't.",
-            section: "abortEnd"
-        },
-        {
-            text: "—",
-            section: "abortEnd"
-        },
-        {
-            text: "—",
-            section: "abortEnd"
-        },
-        {
-            text: "—",
-            section: "abortEnd"
-        },
-        {
-            text: "Two months later.",
-            section: "abortEnd",
-            ambientLight: "neon-blue"
-        },
-        {
-            text: "You're still in the city. Still running memories. Still alive.",
-            section: "abortEnd"
-        },
-        {
-            text: "The corporation found you three weeks ago. Made you an offer.",
-            section: "abortEnd"
-        },
-        {
-            text: "Work for them, or become product. You chose work.",
-            section: "abortEnd"
-        },
-        {
-            text: "Of course you did.",
-            section: "abortEnd"
-        },
-        {
-            text: "They already extracted their data remotely after the failed upload. Pulled it clean while you were running.",
-            section: "abortEnd"
-        },
-        {
-            text: "Then they wiped everything related to her. To Riven. Every memory of the shop, the jobs, the repairs.",
-            section: "abortEnd"
-        },
-        {
-            text: "Punishment for aborting. Insurance against liability. Standard corporate procedure.",
-            section: "abortEnd"
-        },
-        {
-            text: "The jobs are worse now. Darker. They know what you are. What you did.",
-            section: "abortEnd"
-        },
-        {
-            text: "They use that. Send you after people like her. People who fight back.",
-            section: "abortEnd"
-        },
-        {
-            text: "You do it. Because the alternative is becoming nothing.",
-            section: "abortEnd"
-        },
-        {
-            text: "You go to the bridge sometimes. Stand there. Look at the scratches on the railing.",
-            section: "abortEnd",
-            ambientLight: "cold-purple"
-        },
-        {
-            text: "Someone added a new one. COWARD.",
-            section: "abortEnd"
-        },
-        {
-            text: "You run your fingers over it. You know it's about you.",
-            section: "abortEnd"
-        },
-        {
-            text: "But you keep walking. You always do.",
-            section: "abortEnd"
-        },
-        {
-            text: "One night, you're walking past the industrial quarter. You see a shop. Something about it feels familiar.",
-            section: "abortEnd"
-        },
-        {
-            text: "The red light is off. The door is sealed. Condemned.",
-            section: "abortEnd"
-        },
-        {
-            text: "You check the records later. The owner died two months ago. Shootout with corporate security.",
-            section: "abortEnd"
-        },
-        {
-            text: "She took four of them with her. Fought to the end.",
-            section: "abortEnd"
-        },
-        {
-            text: "You feel nothing. Or maybe you feel everything. You can't tell anymore.",
-            section: "abortEnd"
-        },
-        {
-            text: "You don't remember her name. Don't remember her face. The wipe was thorough.",
-            section: "abortEnd"
-        },
-        {
-            text: "But something in your chest aches when you look at that sealed door.",
-            section: "abortEnd"
-        },
-        {
-            text: "Like you lost something important. Something that mattered.",
-            section: "abortEnd"
-        },
-        {
-            text: "You're still broke. Still alone. Still waiting to die.",
-            section: "abortEnd"
-        },
-        {
-            text: "But you won't jump. You never will.",
-            section: "abortEnd",
-            ambientLight: "cold-purple"
-        },
-        {
-            text: "That night, you stand on the bridge again. Look at the drop.",
-            section: "abortEnd"
-        },
-        {
-            text: "Sixty feet. Concrete. Quick. Clean.",
-            section: "abortEnd"
-        },
-        {
-            text: "You pull out a knife. Add your own message to the railing.",
-            section: "abortEnd"
-        },
-        {
-            text: "TOMORROW.",
-            section: "abortEnd"
-        },
-        {
-            text: "Then you keep walking. Because you're a coward. Because tomorrow never comes.",
-            section: "abortEnd"
-        },
-        {
-            text: "Because this is what you deserve. To keep living. To keep existing.",
-            section: "abortEnd"
-        },
-        {
-            text: "To carry this hollow ache you can't explain and can't remember.",
-            section: "abortEnd"
-        },
-        {
-            text: "Forever.",
-            section: "abortEnd",
-            ambientLight: "death-fade"
-        },
-        {
-            text: "END",
-            section: "end"
-        }
-    ]
+// BRANCH: BE HONEST
+const honestPath = [
+    {
+        text: "Ash: I'd do it again. If it meant surviving.",
+        section: "honest"
+    },
+    {
+        text: "Mechanic: At least you're honest about being a monster.",
+        section: "honest"
+    },
+    {
+        text: "Ash: We're all monsters here. You know that.",
+        section: "honest"
+    },
+    {
+        text: "Mechanic: Maybe. But I was never a parasite.",
+        section: "honest",
+        ambientLight: "cold-purple"
+    },
+    {
+        text: "Something changes in her eyes. Not respect. But... acknowledgment.",
+        section: "honest"
+    },
+    {
+        text: "Mechanic: You haven't changed. You won't change. But at least you admit it.",
+        section: "honest"
+    },
+    // Continue to final choice
+    {
+        text: "CONTINUE_TO_FINAL_CHOICE",
+        section: "transition"
+    }
+];
+
+// BRANCH: ATTACK - PATH B "THE ANIMAL"
+const attackPath = [
+    {
+        text: "You lunge at her. Desperate. Cornered.",
+        section: "pathB",
+        glitch: true,
+        ambientLight: "danger-red"
+    },
+    {
+        text: "She doesn't move. Doesn't flinch.",
+        section: "pathB"
+    },
+    {
+        text: "Your hands reach for her throat.",
+        section: "pathB"
+    },
+    {
+        text: "Her metal hand catches your wrist. Crushing pressure. You hear bones crack.",
+        section: "pathB"
+    },
+    {
+        text: "You scream. She doesn't let go.",
+        section: "pathB"
+    },
+    {
+        text: "Her other hand moves. Fast. Military training. You never had a chance.",
+        section: "pathB"
+    },
+    {
+        text: "Something sharp in your throat. Your port. She ripped it out.",
+        section: "pathB",
+        glitch: true
+    },
+    {
+        text: "Neural shock. Your brain shutting down. Blood everywhere.",
+        section: "pathB"
+    },
+    {
+        text: "You're on the floor. Can't move. Can't breathe.",
+        section: "pathB"
+    },
+    {
+        text: "She stands over you. Holds your port in her metal hand. Blood dripping.",
+        section: "pathB"
+    },
+    {
+        text: "Mechanic: You never learn. Violence always has consequences.",
+        section: "pathB"
+    },
+    {
+        text: "Ash: ...please...",
+        section: "pathB"
+    },
+    {
+        text: "Mechanic: No.",
+        section: "pathB"
+    },
+    {
+        text: "Everything fades. Fast. Neural death takes seconds.",
+        section: "pathB",
+        ambientLight: "death-fade"
+    },
+    {
+        text: "The last thing you see is her face. Empty. Like you never mattered.",
+        section: "pathB"
+    },
+    {
+        text: "You didn't.",
+        section: "pathB"
+    },
+    {
+        text: "ENDING 6: THE DESERVED",
+        section: "end"
+    }
+];
+
+// FINAL CHOICE (for main path only)
+const finalChoice = [
+    {
+        text: "She places the upload device in your hand.",
+        section: "finalChoice"
+    },
+    {
+        text: "Mechanic: Choose. Either way, you suffer.",
+        section: "finalChoice",
+        ambientLight: "danger-red"
+    },
+    {
+        text: "Mechanic: Upload and erase yourself. Abort and live knowing what you are.",
+        section: "finalChoice"
+    },
+    {
+        text: "The device sits in your hand. Heavy. Final.",
+        section: "finalChoice"
+    },
+    {
+        text: "You don't deserve mercy. You never did.",
+        section: "finalChoice"
+    },
+
+    // FINAL CHOICE
+    {
+        text: "This is it. The end. One way or another.",
+        section: "finalChoicePoint",
+        isChoice: true,
+        prompt: "What do you do?",
+        choices: [
+            { text: "Complete the upload. Erase yourself.", path: "uploadEnd" },
+            { text: "Abort the upload. Keep existing.", path: "abortEnd" }
+        ]
+    }
+];
+
+// ENDING #2: THE ERASING
+const uploadEnd = [
+    {
+        text: "You plug in the device.",
+        section: "uploadEnd"
+    },
+    {
+        text: "She doesn't stop you. Just watches.",
+        section: "uploadEnd"
+    },
+    {
+        text: "Ash: Yeah. It's what I deserve.",
+        section: "uploadEnd"
+    },
+    {
+        text: "The upload begins.",
+        section: "uploadEnd",
+        glitch: true,
+        ambientLight: "danger-red"
+    },
+    {
+        text: "Code tears through your mind. Not like fire. Like broken glass in your brain.",
+        section: "uploadEnd"
+    },
+    {
+        text: "Every memory burning. Every thought dissolving.",
+        section: "uploadEnd"
+    },
+    {
+        text: "Your legs give out. You hit the floor hard.",
+        section: "uploadEnd"
+    },
+    {
+        text: "She doesn't catch you. Just watches you die.",
+        section: "uploadEnd"
+    },
+    {
+        text: "Through the connection, you feel the network burning.",
+        section: "uploadEnd"
+    },
+    {
+        text: "Thousands of stolen memories being freed. Returned. Deleted.",
+        section: "uploadEnd"
+    },
+    {
+        text: "People waking up. Remembering. Being human again.",
+        section: "uploadEnd"
+    },
+    {
+        text: "It's not redemption. Nothing can redeem what you did.",
+        section: "uploadEnd",
+        ambientLight: "neon-cyan"
+    },
+    {
+        text: "But it's something.",
+        section: "uploadEnd"
+    },
+    {
+        text: "You try to speak. To apologize. Nothing comes out.",
+        section: "uploadEnd"
+    },
+    {
+        text: "She watches. Her face is stone.",
+        section: "uploadEnd"
+    },
+    {
+        text: "Everything is fading. Pain. Guilt. Memories.",
+        section: "uploadEnd"
+    },
+    {
+        text: "You're disappearing. Piece by piece.",
+        section: "uploadEnd"
+    },
+    {
+        text: "It doesn't feel like relief. It just feels like ending.",
+        section: "uploadEnd",
+        ambientLight: "death-fade"
+    },
+    {
+        text: "—",
+        section: "uploadEnd"
+    },
+    {
+        text: "—",
+        section: "uploadEnd"
+    },
+    {
+        text: "—",
+        section: "uploadEnd"
+    },
+    {
+        text: "Three weeks later.",
+        section: "uploadEnd",
+        ambientLight: "neon-blue"
+    },
+    {
+        text: "She returns to her shop. Someone sits in the corner. Staring at nothing.",
+        section: "uploadEnd"
+    },
+    {
+        text: "It's you. Your body. Empty eyes.",
+        section: "uploadEnd"
+    },
+    {
+        text: "She kept you alive. Illegal life support. Black market nutrients.",
+        section: "uploadEnd"
+    },
+    {
+        text: "You don't recognize her. Don't recognize anything.",
+        section: "uploadEnd"
+    },
+    {
+        text: "Sometimes you make sounds. Not words. Just sounds.",
+        section: "uploadEnd"
+    },
+    {
+        text: "She feeds you. Keeps you functional.",
+        section: "uploadEnd"
+    },
+    {
+        text: "You're a pet. A trophy. A reminder.",
+        section: "uploadEnd"
+    },
+    {
+        text: "A customer comes in.",
+        section: "uploadEnd"
+    },
+    {
+        text: "Customer: What's that?",
+        section: "uploadEnd"
+    },
+    {
+        text: "Riven: Nothing important.",
+        section: "uploadEnd"
+    },
+    {
+        text: "She goes back to work. Soldering. Building. Fixing.",
+        section: "uploadEnd"
+    },
+    {
+        text: "Her hands don't shake anymore.",
+        section: "uploadEnd"
+    },
+    {
+        text: "Revenge didn't fix her. Nothing will.",
+        section: "uploadEnd",
+        ambientLight: "cold-purple"
+    },
+    {
+        text: "But at least you're suffering.",
+        section: "uploadEnd"
+    },
+    {
+        text: "ENDING 2: THE ERASING",
+        section: "end"
+    }
+];
+
+// ENDING #3: THE COWARD
+const abortEnd = [
+    {
+        text: "You abort the upload.",
+        section: "abortEnd"
+    },
+    {
+        text: "The device goes dark. Connection severs.",
+        section: "abortEnd"
+    },
+    {
+        text: "She doesn't look surprised. She knew.",
+        section: "abortEnd"
+    },
+    {
+        text: "Mechanic: Of course. You always choose yourself.",
+        section: "abortEnd"
+    },
+    {
+        text: "Ash: I—",
+        section: "abortEnd"
+    },
+    {
+        text: "Mechanic: Get out.",
+        section: "abortEnd"
+    },
+    {
+        text: "Mechanic: You ruined me, and you'd do it again.",
+        section: "abortEnd"
+    },
+    {
+        text: "Mechanic: GET OUT.",
+        section: "abortEnd",
+        ambientLight: "danger-red"
+    },
+    {
+        text: "Boots. Corporate security. The failed upload triggered an alert.",
+        section: "abortEnd",
+        glitch: true
+    },
+    {
+        text: "She pulls a gun from under the workbench.",
+        section: "abortEnd"
+    },
+    {
+        text: "Mechanic: Go. Back door.",
+        section: "abortEnd"
+    },
+    {
+        text: "Ash: Why are you—",
+        section: "abortEnd"
+    },
+    {
+        text: "Mechanic: I'm not helping you. I'm making sure you live long enough to suffer.",
+        section: "abortEnd"
+    },
+    {
+        text: "The door bursts open. You run.",
+        section: "abortEnd"
+    },
+    {
+        text: "Gunfire. Shouting. Breaking glass.",
+        section: "abortEnd"
+    },
+    {
+        text: "You keep running. You don't look back.",
+        section: "abortEnd"
+    },
+    {
+        text: "—",
+        section: "abortEnd"
+    },
+    {
+        text: "—",
+        section: "abortEnd"
+    },
+    {
+        text: "—",
+        section: "abortEnd"
+    },
+    {
+        text: "Two months later.",
+        section: "abortEnd",
+        ambientLight: "neon-blue"
+    },
+    {
+        text: "You're still in the city. Still running memories. Still alive.",
+        section: "abortEnd"
+    },
+    {
+        text: "The corporation found you. Made you an offer.",
+        section: "abortEnd"
+    },
+    {
+        text: "Work for them, or become product. You chose work.",
+        section: "abortEnd"
+    },
+    {
+        text: "They extracted their data remotely while you were running.",
+        section: "abortEnd"
+    },
+    {
+        text: "Then wiped everything about her. Standard procedure.",
+        section: "abortEnd"
+    },
+    {
+        text: "The jobs are worse now. Darker.",
+        section: "abortEnd"
+    },
+    {
+        text: "They know what you are. They use that.",
+        section: "abortEnd"
+    },
+    {
+        text: "You go to the bridge sometimes.",
+        section: "abortEnd",
+        ambientLight: "cold-purple"
+    },
+    {
+        text: "Someone added a new scratch. COWARD.",
+        section: "abortEnd"
+    },
+    {
+        text: "You run your fingers over it. You know it's about you.",
+        section: "abortEnd"
+    },
+    {
+        text: "But you keep walking. You always do.",
+        section: "abortEnd"
+    },
+    {
+        text: "One night, you see a shop. Red light off. Door sealed. Condemned.",
+        section: "abortEnd"
+    },
+    {
+        text: "Records say the owner died two months ago. Shootout with corporate security.",
+        section: "abortEnd"
+    },
+    {
+        text: "She took four with her. Fought to the end.",
+        section: "abortEnd"
+    },
+    {
+        text: "You feel nothing. Or maybe everything. You can't tell anymore.",
+        section: "abortEnd"
+    },
+    {
+        text: "You don't remember her name. Don't remember her face.",
+        section: "abortEnd"
+    },
+    {
+        text: "The wipe was thorough.",
+        section: "abortEnd"
+    },
+    {
+        text: "But something in your chest aches when you look at that sealed door.",
+        section: "abortEnd"
+    },
+    {
+        text: "You're still broke. Still alone. Still waiting to die.",
+        section: "abortEnd"
+    },
+    {
+        text: "But you won't jump. You never will.",
+        section: "abortEnd",
+        ambientLight: "cold-purple"
+    },
+    {
+        text: "That night, you stand on the bridge. Pull out a knife. Add your own message.",
+        section: "abortEnd"
+    },
+    {
+        text: "TOMORROW.",
+        section: "abortEnd"
+    },
+    {
+        text: "Then you keep walking.",
+        section: "abortEnd"
+    },
+    {
+        text: "Because tomorrow never comes.",
+        section: "abortEnd"
+    },
+    {
+        text: "This is what you deserve. To keep living. To keep existing.",
+        section: "abortEnd"
+    },
+    {
+        text: "To carry this ache you can't explain and can't remember.",
+        section: "abortEnd",
+        ambientLight: "death-fade"
+    },
+    {
+        text: "ENDING 3: THE COWARD",
+        section: "end"
+    }
+];
+
+// Export all paths
+const allPaths = {
+    jumpPath,
+    continuePath,
+    refuseJobPath,
+    acceptJobPath,
+    act2,
+    refuseExtractionPath,
+    escapeEnding,
+    betrayEnding,
+    extractionPath,
+    askPath,
+    silentPath,
+    extractionContinue,
+    apologizePath,
+    honestPath,
+    attackPath,
+    finalChoice,
+    uploadEnd,
+    abortEnd
 };
-
-// Game state
-let currentIndex = 0;
-let currentPath = story;
-let choiceMade = false;
-let gameStarted = false;
-
-// DOM elements
-let introScreen;
-let startBtn;
-let storyWrapper;
-let storyText;
-let continueBtn;
-let choiceContainer;
-let choicePrompt;
-let choice1;
-let choice2;
-let progressFill;
-let glitchOverlay;
-let ambientLights;
-
-// Initialize
-function init() {
-    console.log('Initializing game...');
-
-    // Get intro elements
-    introScreen = document.getElementById('intro-screen');
-    startBtn = document.getElementById('start-btn');
-
-    // Get story elements
-    storyWrapper = document.getElementById('story-wrapper');
-    storyText = document.getElementById('story-text');
-    continueBtn = document.getElementById('continue-btn');
-    choiceContainer = document.getElementById('choice-container');
-    choicePrompt = document.getElementById('choice-prompt');
-    choice1 = document.getElementById('choice1');
-    choice2 = document.getElementById('choice2');
-    progressFill = document.getElementById('progress-fill');
-    glitchOverlay = document.getElementById('glitch-overlay');
-    ambientLights = document.getElementById('ambient-lights');
-
-    console.log('All elements found, attaching listeners...');
-
-    // Set up start button
-    startBtn.addEventListener('click', startGame);
-
-    // Set up continue button
-    continueBtn.addEventListener('click', nextStory);
-
-    console.log('Initialization complete!');
-}
-
-// Start game - fade out intro
-function startGame() {
-    console.log('Starting game...');
-    gameStarted = true;
-
-    // Fade out intro screen
-    introScreen.classList.add('fade-out');
-
-    // After fade, show story and start
-    setTimeout(() => {
-        introScreen.style.display = 'none';
-        storyWrapper.classList.add('visible');
-        displayStory();
-    }, 1000);
-}
-
-// Set ambient lighting
-function setAmbientLight(lightClass) {
-    if (!lightClass) {
-        // Clear all lights
-        ambientLights.className = 'ambient-lights';
-        return;
-    }
-
-    // Remove all light classes and add new one
-    ambientLights.className = 'ambient-lights active ' + lightClass;
-}
-
-// Display current story segment
-function displayStory() {
-    const current = currentPath[currentIndex];
-
-    if (!current) {
-        console.error('No story at index:', currentIndex);
-        return;
-    }
-
-    // Set ambient lighting if specified
-    if (current.ambientLight) {
-        setAmbientLight(current.ambientLight);
-    }
-
-    // Reset and hide choice container
-    choiceContainer.classList.add('hidden');
-    continueBtn.classList.remove('hidden');
-
-    // Check if this is a choice point
-    if (current.isChoice) {
-        displayChoice(current);
-        return;
-    }
-
-    // Apply glitch effect if specified
-    if (current.glitch) {
-        storyText.classList.add('glitch');
-        glitchOverlay.style.opacity = '0.3';
-        setTimeout(() => {
-            storyText.classList.remove('glitch');
-            glitchOverlay.style.opacity = '0';
-        }, 300);
-    }
-
-    // Fade out, change text, fade in
-    storyText.style.opacity = '0';
-    setTimeout(() => {
-        storyText.textContent = current.text;
-        storyText.style.opacity = '1';
-    }, 400);
-
-    // Update progress
-    updateProgress();
-
-    // Check if this is the end
-    if (current.section === 'end') {
-        continueBtn.innerHTML = 'RESTART';
-        continueBtn.onclick = restart;
-    }
-}
-
-// Display choice
-function displayChoice(current) {
-    continueBtn.classList.add('hidden');
-
-    storyText.style.opacity = '0';
-    setTimeout(() => {
-        storyText.textContent = current.text;
-        storyText.style.opacity = '1';
-    }, 400);
-
-    setTimeout(() => {
-        choicePrompt.textContent = current.prompt;
-        choice1.textContent = current.choices[0].text;
-        choice2.textContent = current.choices[1].text;
-
-        choiceContainer.classList.remove('hidden');
-
-        choice1.onclick = () => makeChoice(current.choices[0].path);
-        choice2.onclick = () => makeChoice(current.choices[1].path);
-    }, 800);
-}
-
-// Handle choice selection
-function makeChoice(path) {
-    if (choiceMade) return;
-    choiceMade = true;
-
-    // Apply glitch effect
-    glitchOverlay.style.opacity = '0.5';
-    setTimeout(() => {
-        glitchOverlay.style.opacity = '0';
-    }, 400);
-
-    // Switch to the chosen ending path
-    currentPath = endings[path];
-    currentIndex = 0;
-
-    setTimeout(() => {
-        choiceContainer.classList.add('hidden');
-        displayStory();
-    }, 1000);
-}
-
-// Next story segment
-function nextStory() {
-    if (currentIndex < currentPath.length - 1) {
-        currentIndex++;
-        displayStory();
-    }
-}
-
-// Update progress bar
-function updateProgress() {
-    const progress = (currentIndex / currentPath.length) * 100;
-    progressFill.style.width = progress + '%';
-}
-
-// Restart game
-function restart() {
-    currentIndex = 0;
-    currentPath = story;
-    choiceMade = false;
-    gameStarted = false;
-
-    // Clear ambient lights
-    setAmbientLight(null);
-
-    storyWrapper.classList.remove('visible');
-    introScreen.style.display = 'flex';
-    introScreen.classList.remove('fade-out');
-
-    continueBtn.innerHTML = '<span>CONTINUE</span><span class="arrow">▶</span>';
-    continueBtn.onclick = nextStory;
-}
-
-// Start when DOM is ready
-document.addEventListener('DOMContentLoaded', init);
