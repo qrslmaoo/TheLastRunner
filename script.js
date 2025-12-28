@@ -969,15 +969,15 @@ const story = [
             ambientLight: "death-fade"
         },
         {
-            text: —"",
+            text: "—",
             section: "uploadEnd"
         },
         {
-            text: —"",
+            text: "—",
             section: "uploadEnd"
         },
         {
-            text: —"",
+            text: "—",
             section: "uploadEnd"
         },
         {
@@ -1136,15 +1136,15 @@ const story = [
             section: "abortEnd"
         },
         {
-            text: —"",
+            text: "—",
             section: "abortEnd"
         },
         {
-            text: —"",
+            text: "—",
             section: "abortEnd"
         },
         {
-            text: —"",
+            text: "—",
             section: "abortEnd"
         },
         {
