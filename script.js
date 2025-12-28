@@ -1,4 +1,4 @@
-// Story data structure - Pure isolation and despair
+// Story data structure - Plot holes patched
 const story = [
     // ACT 1 - THE DYING CITY
     {
@@ -160,6 +160,10 @@ const story = [
     },
     {
         text: "A girl with chrome eyes stares at you. They don't blink. Can't blink.",
+        section: "act1"
+    },
+    {
+        text: "You wonder what she traded for them. What she gave up. If it was worth it.",
         section: "act1"
     },
     {
@@ -444,23 +448,31 @@ const story = [
         section: "act2"
     },
     {
-        text: "Two years ago, you were used as a test subject. Neural storage trial.",
+        text: "Two years ago, you brokered a deal. Sold someone to the corporation. A mechanic.",
         section: "act2"
     },
     {
-        text: "You don't remember volunteering. You don't remember anything from two years ago.",
+        text: "The deal went bad. You tried to back out. They didn't let you.",
         section: "act2"
     },
     {
-        text: "Just... nothing. A blank space where months should be.",
+        text: "As punishment—or insurance—they used you as a test subject. Wiped your memories of the deal. Of her.",
         section: "act2"
     },
     {
-        text: "They wiped your memories. Stored corporate data in your brain. You've been a walking storage device.",
+        text: "Stored classified data in your brain as a backup. Then released you with a new identity chip.",
         section: "act2"
     },
     {
-        text: "And you never even knew.",
+        text: "New face. New name. New life. You don't even remember being someone else.",
+        section: "act2"
+    },
+    {
+        text: "The corporation lost track of you after the wipe. Budget cuts. System failures. Bureaucratic rot.",
+        section: "act2"
+    },
+    {
+        text: "Two years of searching. And now they found you. Now they want their data back.",
         section: "act2"
     },
     {
@@ -663,6 +675,10 @@ const story = [
         glitch: true
     },
     {
+        text: "Your old face is reflected in the metal. A face you don't recognize. Before they changed you.",
+        section: "act3"
+    },
+    {
         text: "I need you to do something for me, you hear yourself say.",
         section: "act3"
     },
@@ -742,6 +758,18 @@ const story = [
         section: "act3"
     },
     {
+        text: "Then corporate security turning on you. The deal was always a trap. For both of you.",
+        section: "act3"
+    },
+    {
+        text: "They drag you to another room. Strap you down. Wipe your memories. Give you a new face.",
+        section: "act3"
+    },
+    {
+        text: "Make you forget her. Forget what you did. Forget who you were.",
+        section: "act3"
+    },
+    {
         text: "Then nothing.",
         section: "act3"
     },
@@ -771,7 +799,11 @@ const story = [
         section: "act3"
     },
     {
-        text: "Yes.",
+        text: "Yes. The corporation changed your face, but I recognized your neural signature. Your port. Your walking pattern.",
+        section: "act3"
+    },
+    {
+        text: "I've been tracking you for two years. Waiting for them to find you. Waiting for this.",
         section: "act3"
     },
     {
@@ -972,11 +1004,11 @@ const endings = {
             section: "uploadEnd"
         },
         {
-            text: "It's you. Your body. Your face. Empty eyes.",
+            text: "It's you. Your body. Your new face. Empty eyes.",
             section: "uploadEnd"
         },
         {
-            text: "She kept you alive. Not sure why.",
+            text: "She kept you alive. With illegal life support. Black market nutrients. Medical debt she'll never pay off.",
             section: "uploadEnd"
         },
         {
@@ -1147,6 +1179,18 @@ const endings = {
             section: "abortEnd"
         },
         {
+            text: "They already extracted their data remotely after the failed upload. Pulled it clean while you were running.",
+            section: "abortEnd"
+        },
+        {
+            text: "Then they wiped everything related to her. To Riven. Every memory of the shop, the jobs, the repairs.",
+            section: "abortEnd"
+        },
+        {
+            text: "Punishment for aborting. Insurance against liability. Standard corporate procedure.",
+            section: "abortEnd"
+        },
+        {
             text: "The jobs are worse now. Darker. They know what you are. What you did.",
             section: "abortEnd"
         },
@@ -1176,7 +1220,7 @@ const endings = {
             section: "abortEnd"
         },
         {
-            text: "One night, you're walking past the industrial quarter. You see the shop.",
+            text: "One night, you're walking past the industrial quarter. You see a shop. Something about it feels familiar.",
             section: "abortEnd"
         },
         {
@@ -1184,7 +1228,7 @@ const endings = {
             section: "abortEnd"
         },
         {
-            text: "You check the records later. She died that night. Shootout with corporate security.",
+            text: "You check the records later. The owner died two months ago. Shootout with corporate security.",
             section: "abortEnd"
         },
         {
@@ -1193,6 +1237,18 @@ const endings = {
         },
         {
             text: "You feel nothing. Or maybe you feel everything. You can't tell anymore.",
+            section: "abortEnd"
+        },
+        {
+            text: "You don't remember her name. Don't remember her face. The wipe was thorough.",
+            section: "abortEnd"
+        },
+        {
+            text: "But something in your chest aches when you look at that sealed door.",
+            section: "abortEnd"
+        },
+        {
+            text: "Like you lost something important. Something that mattered.",
             section: "abortEnd"
         },
         {
@@ -1225,11 +1281,11 @@ const endings = {
             section: "abortEnd"
         },
         {
-            text: "Because this is what you deserve. To keep living. To keep remembering.",
+            text: "Because this is what you deserve. To keep living. To keep existing.",
             section: "abortEnd"
         },
         {
-            text: "To carry her metal hands. Her screaming. Her death.",
+            text: "To carry this hollow ache you can't explain and can't remember.",
             section: "abortEnd"
         },
         {
