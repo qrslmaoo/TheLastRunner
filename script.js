@@ -1323,19 +1323,7 @@ const attackPath = [
 
 // FINAL CHOICE (for main path only)
 const finalChoice = [
-        // CHOICE: Stay with Riven or leave and end it yourself
     {
-        text: "The truth sits between you. Heavy. You could stay and face whatever she has planned. Or walk out and end it your own way.",
-        section: "harvestChoice",
-        isChoice: true,
-        prompt: "What do you do?",
-        choices: [
-            { text: "Stay. Face what Riven has planned.", path: "continueToFinalChoice" },
-            { text: "Leave. You can't do this. End it yourself.", path: "harvestEnd" }
-        ]
-    },
-
-{
         text: "She places the upload device in your hand.",
         section: "finalChoice"
     },
