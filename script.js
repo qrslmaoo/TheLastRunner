@@ -31,7 +31,7 @@ const story = [
         section: "act1"
     },
     {
-        text: "The neon signs flicker outside your window"”half of them broken, the other half selling lies.",
+        text: "The neon signs flicker outside your window, half of them broken, the other half selling lies.",
         section: "act1",
         ambientLight: "neon-blue"
     },
@@ -85,7 +85,7 @@ const story = [
         section: "act1"
     },
     {
-        text: "Break that rule, and you're dead. Or worse"”you become a product.",
+        text: "Break that rule, and you're dead. Or worse, you become a product.",
         section: "act1",
         ambientLight: "danger-red"
     },
